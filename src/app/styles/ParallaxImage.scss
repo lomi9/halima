@@ -1,0 +1,16 @@
+.parallax__container{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    background-color: red;
+
+    &-img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        top: -100px;
+        left: 0;
+    }
+}

@@ -1,6 +1,35 @@
-@tailwind base;
+@tailwindcss base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: #fdfeec;
+}
+
+body {
+  margin: 0 !important;
+}
+
+main {
+  padding: 0 !important;
+}
+
+.kodchasan {
+  font-family: var(--font-kodchasan);
+}
+
+.judson {
+  font-family: var(--font-judson);
+}
+
+.chakra {
+  font-family: var(--font-chakra);
+}
+/*
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,3 +60,4 @@ body {
     text-wrap: balance;
   }
 }
+*/
