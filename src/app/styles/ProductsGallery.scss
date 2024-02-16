@@ -1,0 +1,33 @@
+.products{
+    background-color: #E2E1CB;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    padding-bottom: 1vw;
+
+    &__content{
+        width: auto;
+        padding: 5vw 0;
+        overflow:scroll;
+        box-sizing: border-box;
+        &::-webkit-scrollbar {
+            width: 2px; 
+          }
+          
+          &::-webkit-scrollbar-track {
+            background: transparent; /* color of the tracking area */
+            border: none;
+        }
+          
+          &::-webkit-scrollbar-thumb {
+            background-color:#35333336; /* color of the scroll thumb */
+            border-radius: 20px; /* roundness of the scroll thumb */
+            border: 1px solid transparent; /* creates padding around scroll thumb */
+            cursor: pointer;
+            width: 20px;
+        }
+    }
+}

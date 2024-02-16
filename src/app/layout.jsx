@@ -2,6 +2,10 @@ import { Kodchasan, Judson, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import "./styles/HomeCategory.scss";
 import "./styles/ParallaxImage.scss";
+import "./styles/ProductsGallery.scss";
+import "./styles/ProductsDescription.scss";
+import "./styles/ProductCard.scss";
+import "./styles/LitleCard.scss";
 
 const kodchasan = Kodchasan({
   subsets: ["latin"],

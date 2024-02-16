@@ -18,7 +18,7 @@ function ParallaxImage({ imageUrl }) {
               trigger: parallaxRef.current.parentNode, 
               start: "top bottom",
               end: "bottom top",
-              scrub: true
+              scrub: true,
             },
             ease: "none"
           }

@@ -61,6 +61,10 @@
                 text-transform: uppercase; 
             }
 
+            &-line{
+                display: none;
+            }
+
             &-text {
                 color: #353333;
                 font-size: 1.6vw;
@@ -109,6 +113,99 @@
 
             }
         }
+    }
+
+}
+
+
+@media ( max-width : 640px ){
+
+    .category{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;   
+        width: 100%;
+        padding-bottom: 10vw;
+
+        flex-direction: column;
+    
+        &__left{
+            padding: 10vw 0;
+            width: 100%;
+    
+            &-image1{
+                position: absolute;
+                width: 40%;
+                height: 50vw;
+                left: 50%;
+                transform: translate(-50%, -75%);
+                border: 1px solid #353333;
+            }
+            &-image2{
+                display: none;
+            }
+    
+            &-line{
+               display: none;
+            }
+    
+        }
+    
+        &__right{
+            padding-top: 10vw;
+            padding-left: 5vw;
+            width: 100%;
+            
+            &-content {
+                position: relative;
+    
+                &-title{
+                    font-size: 4.5vw;
+                    font-weight: 600;
+                    width: 100%;
+                }
+
+                &-line{
+                    position: absolute;
+                    top: 11vw;
+                    left: À;
+                    display: flex;
+                    height: 1px;
+                    width: 100px;
+                    background-color: #353333;
+                }
+    
+                &-text {
+                    padding-top: 5vw;
+                    color: #353333;
+                    font-size: 3.5vw;
+                    text-align: left;
+                    line-height: 5vw;
+                }
+    
+                &-button{
+                    padding-top: 7vw;
+    
+                    &-btn{
+                        color: #353333;
+                        padding: 1vw 6vw;
+                        font-size: 3vw;
+                    }
+                    &-line1{
+                        top: 10vw;
+                        left: 19vw;
+                        width: 7vw;
+                    }
+                    &-line2{
+                        top: 10vw;
+                        right: 19vw;
+                        width: 7vw;
+                    }
+    
+                }
+            }
+        }
+    
     }
 
 }

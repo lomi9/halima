@@ -14,3 +14,15 @@
         left: 0;
     }
 }
+
+@media ( max-width : 640px ){
+    .parallax__container{
+        height: 150px;
+    
+        &-img{
+
+            top: -50px;
+        }
+    }
+
+}

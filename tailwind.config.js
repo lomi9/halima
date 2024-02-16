@@ -15,7 +15,12 @@ module.exports = {
       colors: {
         "accent-color": "#FF6947",
         "primary-color": "#353333",
+        "secondary-color": "#254127",
         "main-color": "#FDFEEC",
+        "section-color": "#E2E1CB",
+        "tabbutton-text-color": "#7e755f",
+        "tabbutton-bg-color": "#b8ac8d84",
+        "tabbutton-border-color": "#a0957a",
       },
     },
   },

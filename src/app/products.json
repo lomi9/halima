@@ -1,0 +1,165 @@
+{
+    "categories":{
+
+        "edible": [
+        
+            {
+                "id": "1",
+                "category": "edible",
+                "title":"Huile d'olive",
+                "subtitle":"flacon 20cl",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"23",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+           {
+                "id": "2",
+                "category" : "edible",
+                "title":"Huile d'argan",
+                "subtitle":"flacon 30cl",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            }
+
+        ],
+
+        "beauty":[
+
+            {
+                "id": "3",
+                "category": "beauty",
+                "title":"Huile d'argan",
+                "subtitle":"flacon 20cl",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"23",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+            {
+                "id": "4",
+                "category": "beauty",
+                "title":"Huile de nigelle",
+                "subtitle":"flacon 30cl",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+
+            {
+                "id": "5",
+                "category": "beauty",
+                "title":"Huile de figue de barbarie",
+                "subtitle":"flacon 20cl",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"23",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            }
+            
+        ],
+        "spices" : [
+           
+            {
+                "id": "6",
+                "category": "spices",
+                "title":"Curcuma",
+                "subtitle":"sachet 20g",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"23",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+            {
+                "id": "7",
+                "category": "spices",
+                "title":"Gingembre",
+                "subtitle":"sachet 20g",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+            {
+                "id": "8",
+                "category": "spices",
+                "title":"Cumin",
+                "subtitle":"sachet 20g",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+            {
+                "id": "9",
+                "category": "spices",
+                "title":"Canelle",
+                "subtitle":"sachet 20g",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            }
+
+        ],
+        "treats":[
+            {
+                "id": "10",
+                "category": "treats",
+                "title":"Amlou",
+                "subtitle":"Pot 50g",
+                "image":"/huile-argan-maroc-home.webp",
+                "price":"23",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            },
+            {
+                "id": "11",
+                "category": "treats",
+                "title":"Café",
+                "subtitle":"Sachet 20g",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"13",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
+            }
+
+        ]
+    }
+}
