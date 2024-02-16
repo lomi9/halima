@@ -16,8 +16,8 @@ export default function LitleCard({ title, subtitle, image, price, category }) {
                         <p className='litle__card-content-header-text judson'>{subtitle}</p>
                     </div>
                     <div className='litle__card-content-product'>
-                        <div className='litle__card-content-product-container'>
-                            <Image src={image} alt='produit' className='litle__card-content-product-container-img'/>
+                        <div className='litle__card-content-product-container relative'>
+                            <Image layout="fill" objectFit="cover" src={image} alt='produit' className='litle__card-content-product-container-img'/>
                         </div>
                     </div>
                     <div className='litle__card-content-infos'>

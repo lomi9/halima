@@ -10,8 +10,8 @@ export default  function ProductCard({ product, isSelected, onProductClick }) {
                         <p className='product__card-content-header-text judson'>{product.subtitle}</p>
                     </div>
                     <div className='product__card-content-product'>
-                        <div className='product__card-content-product-container'>
-                            <Image src={product.image} alt='produit' className='product__card-content-product-container-img'/>
+                        <div className='product__card-content-product-container relative'>
+                            <Image layout="fill" src={product.image} alt='produit' className='product__card-content-product-container-img'/>
                         </div>
                     </div>
                     <div className='product__card-content-infos'>

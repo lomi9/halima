@@ -6,7 +6,7 @@ import Image from 'next/image';
 function Banner() {
   return (
     <div className='banner relative flex inset-x-0 h-screen w-screen z-30'>
-        <Image src={banner.src} alt='achitecture marocaine' className='banner-img relative object-cover w-full h-full'/>
+        <Image layout="fill" src={banner.src} alt='achitecture marocaine' className='banner-img relative object-cover w-full h-full'/>
         <div className='banner-filter absolute flex flex-wrap h-full w-full content-center bg-black opacity-45 z-35'></div>
             <div className=' banner-content flex flex-wrap absolute p-10 h-full sm:w-full md:w-2/3 z-40 justify-center sm:justify-start'>
                 <h1 className=' text-main-color w-full kodchasan flex flex-wrap content-end font-semibold text-2xl sm:text-4xl z-40 justify-center sm:justify-start'>HALIMA GARDEN</h1>

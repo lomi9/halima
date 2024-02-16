@@ -6,7 +6,9 @@ function Footer() {
   return (
     <footer className='bg-primary-color flex flex-wrap flex-col w-screen'>
         <div className='flex flex-wrap justify-center p-5'> 
-            <Image src={logo.src} alt="Logo Halima Garden" className='w-20'/>
+        <div className='w-20 h-20 relative'>
+            <Image src={logo.src}  layout="fill" objectFit="cover"alt="Logo Halima Garden" className='w-20'/>
+            </div>
             <p className='w-full flex flex-wrap justify-center text-main-color kodchasan text-xl'>HALIMA GARDEN</p>
 
         </div>

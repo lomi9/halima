@@ -32,20 +32,16 @@ export default function Navbar() {
 
   return (
     <>
- <div className="navbar fixed bg-main-color top-3 p-0 w-full z-50 border-x-0 border-solid border-1 border-secondary min-h-0">
+ <div className="navbar fixed bg-main-color top-3 p-0 w-full z-50 border-x-0 border-solid border border-secondary min-h-0">
   <div className="navbar-start">
     <div className="dropdown">
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" onClick={toggleMenu}>
-       {/* Icône du menu qui change selon l'état isMenuOpen */}
               {isMenuOpen ? (
-                // Icône pour le menu ouvert (croix)
                <X className='h-5 w-5 text-primary-color'/>
               ) : (
-                // Icône pour le menu fermé (hamburger)
                 <Menu className="h-5 w-5 text-primary-color" />
               )}
     </div>
-          {/* Menu items, shown or hidden based on isMenuOpen */} 
       <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-main-color rounded-box w-52  ${isMenuOpen ? 'block' : 'hidden'}`} ref={menuRef}>
         <li><Link href="/" onClick={toggleMenu} className=' hover:text-accent-color p-2 chakra text-lg text-primary-color'>Accueil</Link></li>
         <li><Link href='/edible' onClick={toggleMenu} className=' hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles alimentaires</Link></li>
@@ -58,8 +54,8 @@ export default function Navbar() {
     </div>
   </div>
   <div className="navbar-center flex-wrap content-center">
-    <Link href="/" className='h-full w-10'>
-      <Image src={logo.src} alt="Logo Halima Garden" className='object-cover w-full h-full object-center'/>
+    <Link href="/" className='h-10 w-10 relative'>
+      <Image src={logo.src} layout="fill" objectFit="cover" alt="Logo Halima Garden" className='object-cover w-10 h-full object-center'/>
     </Link>
     <Link href="/" className="kodchasan hidden sm:flex  font-light btn btn-ghost text-xl flex-wrap content-center">HALIMA GARDEN</Link>
   </div>

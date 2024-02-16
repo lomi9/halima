@@ -39,11 +39,11 @@ function ProductsDescription({ product }) {
         <div className='description__content'> 
             <div className='description__content-left'>
                 <div className='description__content-left-content'>
-                    <div className='description__content-left-content-img1'>
-                        <Image src={proudly.src} className='description__content-left-content-img1-img' alt='Production marocaine'/>
+                    <div className='description__content-left-content-img1 relative'>
+                        <Image layout="fill" src={proudly.src} className='description__content-left-content-img1-img' alt='Production marocaine'/>
                     </div>
-                    <div className='description__content-left-content-img2'>
-                        <Image src={image.src} className='description__content-left-content-img2-img' alt='paysage marocain'/>
+                    <div className='description__content-left-content-img2 relative'>
+                        <Image layout="fill" src={image.src} className='description__content-left-content-img2-img' alt='paysage marocain'/>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@ function ProductsDescription({ product }) {
                 <div className='description__content-right-text chakra'>
                     <div className='description__content-right-text-content chakra'>
                         <div className='description__content-right-text-content-top'>
-                            <div className='description__content-right-text-content-top-image'>
-                                <Image src={product.image} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
+                            <div className='description__content-right-text-content-top-image relative'>
+                                <Image layout="fill" src={product.image} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
                             </div>
                         <p className='description__content-right-text-content-top-p chakra'>
                         {getContent()}
