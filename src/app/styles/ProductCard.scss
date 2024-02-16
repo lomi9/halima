@@ -217,3 +217,61 @@
         font-weight: 200;
     }
 }
+
+@media (max-width : 640px ){
+
+    .product__card{
+        min-width: 160px;
+
+        &-content{
+            &-header{
+                &-title{
+                    font-size: 2vw;
+
+                }
+                &-text{
+                    font-size: 1.8vw;
+                    padding-bottom: 2vw;
+
+                }
+            }
+            
+            &-product{
+            height: 130px;
+        }
+        &-infos{
+            &-top{
+                padding-top: 2vw;
+                padding-bottom: 2vw;
+
+                &-btn{
+                font-size: 2vw;
+                padding: 1vw 2.8vw;
+            }
+        }
+        &-bottom{
+            &-price{
+                font-size: 3vw;
+            }
+            &-cta{
+                &-btn{
+                    font-size: 2vw;
+                }
+                &-line1{
+                    width: 17px;
+                    left: 15vw;
+
+                }
+                &-line2{
+                    width: 17px;
+                    right: 15vw;
+
+                }
+
+            }
+
+        }
+        }
+    }
+    }
+}

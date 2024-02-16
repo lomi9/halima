@@ -206,3 +206,97 @@
 }
 
 
+@media (max-width : 640px ){
+
+    .description__content{
+        flex-direction: column-reverse;
+
+        &-left{
+            width: 100%;
+            &-content{
+                flex-direction: row;
+                padding-top: 20vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+
+                &-img1{
+                    width: 30%;
+                    height: 120px;
+                    display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                margin-right: 6vw;
+
+                }
+                &-img2{
+                    width: 30%;
+                    height: 120px;
+                    display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                margin-left: 6vw;
+                }
+            }
+          
+
+        }
+        &-right{
+            width: 100%;
+            align-content: normal;
+            &-title{
+                font-size: 5vw;
+                width: 100%;
+                margin: 0;
+                padding-top: 3vw;
+                padding-bottom: 1vw;
+
+            }
+            &-subtitle{
+                margin: 0;
+                width: 100%;
+                padding-top: 0;
+                padding-bottom: 5vw;
+
+
+            }
+            &-text{
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-evenly;
+                
+
+                &-content{
+                    height: 100%;
+
+                    &-top{
+                        height: auto;
+                        &-image{
+                            display: none;
+                        }
+
+                        &-p{
+                            width: 100%;
+                            text-align: left;
+                            font-size: 3vw;
+                        }
+                    }
+                    &-buttons{
+                        &-btn{
+                            font-size: 2.3vw;
+                            padding: 2vw 4vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
