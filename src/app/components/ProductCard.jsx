@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default  function ProductCard({ product, isSelected, onProductClick }) {
@@ -10,7 +11,7 @@ export default  function ProductCard({ product, isSelected, onProductClick }) {
                     </div>
                     <div className='product__card-content-product'>
                         <div className='product__card-content-product-container'>
-                            <img src={product.image} alt='produit' className='product__card-content-product-container-img'/>
+                            <Image src={product.image} alt='produit' className='product__card-content-product-container-img'/>
                         </div>
                     </div>
                     <div className='product__card-content-infos'>

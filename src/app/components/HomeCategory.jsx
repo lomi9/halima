@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,10 +8,10 @@ function HomeCategory({ topImage, behindImage, title, paragraph, link }) {
     <section className='category'>
         <div className=' category__left'>
             <div className="category__left-image1">
-                <img src={topImage} className='object-cover w-full h-full text-center'/>
+                <Image src={topImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center'/>
             </div>
             <div className="category__left-image2">
-                <img src={behindImage} className='object-cover w-full h-full text-center'/>
+                <Image src={behindImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center'/>
             </div>
             <span className='category__left-line'></span>
             <div></div>

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import { Menu, X, User, ShoppingBasket, Mail } from 'lucide-react';
 import logo from "../../../public/logo-rond.png";
+import Image from 'next/image';
 
 
 export default function Navbar() {
@@ -57,9 +58,9 @@ export default function Navbar() {
     </div>
   </div>
   <div className="navbar-center flex-wrap content-center">
-    <div className='h-full w-10'>
-      <img src={logo.src} className='object-cover w-full h-full object-center'/>
-    </div>
+    <Link href="/" className='h-full w-10'>
+      <Image src={logo.src} alt="Logo Halima Garden" className='object-cover w-full h-full object-center'/>
+    </Link>
     <Link href="/" className="kodchasan hidden sm:flex  font-light btn btn-ghost text-xl flex-wrap content-center">HALIMA GARDEN</Link>
   </div>
   <div className="navbar-end">

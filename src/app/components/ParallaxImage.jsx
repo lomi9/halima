@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,7 @@ function ParallaxImage({ imageUrl }) {
     
       return (
         <div className="parallax__container">
-          <img ref={parallaxRef} src={imageUrl} alt="Parallax"  className='parallax__container-img'/>
+          <Image ref={parallaxRef} src={imageUrl} alt="Patrimoine marocain"  className='parallax__container-img'/>
         </div>
       );
     }

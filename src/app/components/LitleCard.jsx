@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -16,7 +17,7 @@ export default function LitleCard({ title, subtitle, image, price, category }) {
                     </div>
                     <div className='litle__card-content-product'>
                         <div className='litle__card-content-product-container'>
-                            <img src={image} alt='produit' className='litle__card-content-product-container-img'/>
+                            <Image src={image} alt='produit' className='litle__card-content-product-container-img'/>
                         </div>
                     </div>
                     <div className='litle__card-content-infos'>

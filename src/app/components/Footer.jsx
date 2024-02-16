@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from "../../../public/logo-rond.png";
+import Image from 'next/image';
 
 function Footer() {
   return (
     <footer className='bg-primary-color flex flex-wrap flex-col w-screen'>
         <div className='flex flex-wrap justify-center p-5'> 
-            <img src={logo.src} alt="Logo Halima Garden" className='w-20'/>
+            <Image src={logo.src} alt="Logo Halima Garden" className='w-20'/>
             <p className='w-full flex flex-wrap justify-center text-main-color kodchasan text-xl'>HALIMA GARDEN</p>
 
         </div>

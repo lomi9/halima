@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import image from "../../../public/oliviers.jpg";
 import proudly from "../../../public/proudly.png";
 import TabButton from './TabButton';
+import Image from 'next/image';
 
 function ProductsDescription({ product }) {
 
@@ -39,10 +40,10 @@ function ProductsDescription({ product }) {
             <div className='description__content-left'>
                 <div className='description__content-left-content'>
                     <div className='description__content-left-content-img1'>
-                        <img src={proudly.src} className='description__content-left-content-img1-img' alt='Production marocaine'/>
+                        <Image src={proudly.src} className='description__content-left-content-img1-img' alt='Production marocaine'/>
                     </div>
                     <div className='description__content-left-content-img2'>
-                        <img src={image.src} className='description__content-left-content-img2-img' alt='paysage marocain'/>
+                        <Image src={image.src} className='description__content-left-content-img2-img' alt='paysage marocain'/>
                     </div>
                 </div>
             </div>
@@ -53,7 +54,7 @@ function ProductsDescription({ product }) {
                     <div className='description__content-right-text-content chakra'>
                         <div className='description__content-right-text-content-top'>
                             <div className='description__content-right-text-content-top-image'>
-                                <img src={product.image} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
+                                <Image src={product.image} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
                             </div>
                         <p className='description__content-right-text-content-top-p chakra'>
                         {getContent()}
