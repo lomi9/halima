@@ -11,10 +11,10 @@ import section3image2 from "../../public/epices-vrac-maroc-home.webp";
 import section4image1 from "../../public/cafe-maroc-home.webp";
 import section4image2 from "../../public/terrasse-maroc-home.webp";
 import ParallaxImage from "./components/ParallaxImage";
-import banner1 from "../../public/branches-oliviers.webp";
-import banner2 from "../../public/porte-maroc.webp";
-import banner3 from "../../public/epices-maroc.webp";
-import banner4 from "../../public/amandes-maroc.webp";
+import banner1 from "../../public/branches_oliviers.webp";
+import banner2 from "../../public/porte_maroc.webp";
+import banner3 from "../../public/epices_maroc.webp";
+import banner4 from "../../public/amandes_maroc.webp";
 import Footer from "./components/Footer";
 
 export default function Home() {

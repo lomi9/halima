@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ProductsBanner from '../components/ProductsBanner';
-import image from "../../../public/epices-maroc.webp";
+import image from "../../../public/epices_maroc.webp";
 import ProductsGallery from '../components/ProductsGallery';
 import products from '../products.json';
 import RandomProducts from '../components/RandomProducts';
