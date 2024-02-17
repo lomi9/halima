@@ -29,11 +29,13 @@ export default function LitleCard({ title, subtitle, image, price, category }) {
                         <div className='litle__card-content-infos-bottom'>
                             <p className='litle__card-content-infos-bottom-price chakra'>{price}€</p>
                             <div className='litle__card-content-infos-bottom-cta'>
-                                <button className='litle__card-content-infos-bottom-cta-btn kodchasan btn-ghost'>
+                                <div className='litle__card-content-infos-bottom-cta-btn'>
+                                <button className='litle__card-content-infos-bottom-cta-btn-text kodchasan btn-ghost'>
                                     Acheter
                                 </button>
-                                <span className='litle__card-content-infos-bottom-cta-line1'></span>
-                                <span className='litle__card-content-infos-bottom-cta-line2'></span>
+                                <span className='litle__card-content-infos-bottom-cta-btn-line1'></span>
+                                <span className='litle__card-content-infos-bottom-cta-btn-line2'></span>
+                                </div>
                             </div>
                         </div>
                     </div>

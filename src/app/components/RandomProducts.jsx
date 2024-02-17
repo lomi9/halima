@@ -16,7 +16,7 @@ function RandomProducts() {
         <span className='line bottom-0 absolute flex w-44 h-px bg-primary-color flex-wrap justify-center content-center'></span>
         </div>
       </div>
-              <div className="flex overflow-scroll">
+              <div className="flex overflow-scroll pb-10">
       {shuffledProducts.map((product) => (
         <LitleCard
         key={product.id}
