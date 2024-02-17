@@ -52,7 +52,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Navbar/>
       <Banner/>
-      <div className="content">
+      <div id="content">
         <Presentation/>
         <ParallaxImage imageUrl={parallax1} />
         <HomeCategory topImage={section1topImage} behindImage={section1behindImage} title={section1title} paragraph={section1paragraph} link={section1link}/>
