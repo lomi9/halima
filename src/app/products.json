@@ -129,12 +129,25 @@
                 "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
                 "stock" : 12
 
+            },
+            {
+                "id": "10",
+                "category": "spices",
+                "title":"Paprika",
+                "subtitle":"sachet 20g",
+                "image":"/huile-olive-maroc-home.webp",
+                "price":"16",
+                "ingredients":"Ingrédients : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "vertues":"Vertues : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "utilisation":"Utilisation : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos et enim rerum non amet debitis itaque pariatur esse porro quia, ipsum, libero culpa maxime optio deserunt ut earum inventore voluptates!",
+                "stock" : 12
+
             }
 
         ],
         "treats":[
             {
-                "id": "10",
+                "id": "11",
                 "category": "treats",
                 "title":"Amlou",
                 "subtitle":"Pot 50g",
@@ -147,7 +160,7 @@
 
             },
             {
-                "id": "11",
+                "id": "12",
                 "category": "treats",
                 "title":"Café",
                 "subtitle":"Sachet 20g",
