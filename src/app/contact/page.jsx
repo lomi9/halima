@@ -16,7 +16,7 @@ const contactParagraph = "";
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
        <Navbar/>
        <ProductsBanner image={contactImage} title={contactTitle} paragraph={contactParagraph}/>
-       <div className="contact__section flex w-full justify-center p-20">
+       <div className="contact__section flex w-full justify-center p-2 sm:p-20">
          <Contact/>
        </div>
      </main>

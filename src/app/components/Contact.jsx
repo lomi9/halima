@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contact() {
   return (
-    <div className="w-2/3 p-8 bg-main-color shadow-md rounded-lg">
+    <div className="w-full sm:w-2/3 p-8 bg-main-color shadow-md rounded-lg">
             <form className="space-y-4">
                 <div className='flex flex-wrap'>
                     <label htmlFor="name" className="flex flex-wrap content-center chakra text-sm font-medium text-gray-700">Votre nom :</label>
