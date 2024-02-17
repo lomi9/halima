@@ -25,7 +25,7 @@ export default  function ProductCard({ product, isSelected, onProductClick }) {
                             <p className='product__card-content-infos-bottom-price chakra'>{product.price}€</p>
                             <div className='product__card-content-infos-bottom-cta'>
                                 <div className='product__card-content-infos-bottom-cta-btn'>
-                                    <button className='product__card-content-infos-bottom-cta-btn-text kodchasan btn-ghost'>
+                                    <button className='product__card-content-infos-bottom-cta-btn-text kodchasan'>
                                      Acheter
                                     </button>
                                     <span className='product__card-content-infos-bottom-cta-btn-line1'></span>
