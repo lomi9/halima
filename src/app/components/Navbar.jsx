@@ -48,7 +48,7 @@ export default function Navbar() {
         <li><Link href="/beauty" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles de beauté</Link></li>
         <li><Link href="/spices" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Épices</Link></li>
         <li><Link href="/treats" onClick={toggleMenu}className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Gourmandises</Link></li>
-        <li><a onClick={toggleMenu}className='hover:text-accent-color font-semibold p-2 chakra text-lg text-primary-color flex sm:hidden'>Contact</a></li>
+        <li><Link href="/contact" onClick={toggleMenu}className='hover:text-accent-color font-semibold p-2 chakra text-lg text-primary-color flex sm:hidden'>Contact</Link></li>
 
       </ul>
     </div>
@@ -60,9 +60,9 @@ export default function Navbar() {
     <Link href="/" className="kodchasan hidden sm:flex  font-light btn btn-ghost text-xl flex-wrap content-center">HALIMA GARDEN</Link>
   </div>
   <div className="navbar-end">
-  <button className="btn btn-ghost btn-circle hidden sm:block">
+  <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex">
     <Mail className='w-5 sm:w-7'/>
-    </button>
+    </Link>
     <button className="btn btn-ghost btn-circle">
       <div className="indicator">
       <User className='w-5 sm:w-7'/>
