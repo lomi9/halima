@@ -239,45 +239,45 @@
 @media (max-width : 640px ){
 
     .litle__card{
-        width: 35vw;
-        min-width: 35vw;
+        width: 50vw;
+        min-width: 50vw;
 
         &-content{
             &-header{
                 padding: 2vw 0;
                 &-title{
-                    font-size: 2vw;
+                    font-size: 3vw;
 
                 }
                 &-text{
-                    font-size: 1.8vw;
+                    font-size: 2.8vw;
 
                 }
             }
             
             &-product{
-                height: 22vw;
+                height: 32vw;
 
 
             &-container{
-                width: 22vw;
+                width: 32vw;
 
             }
         }
         &-infos{
             &-top{
-                padding-top: 3vw;
+                padding-top: 4vw;
 
 
                 &-btn{
-                    font-size: 2vw;
-                    padding: 1vw 2.5vw;
+                    font-size: 3vw;
+                    padding: 2vw 4.5vw;
             }
         }
         &-bottom{
-            padding: 4vw 0 2.5vw 0;
+            padding: 6vw 0 4.5vw 0;
             &-price{
-                font-size: 3vw;
+                font-size: 4vw;
                 margin: 0;
 
             }
@@ -286,15 +286,15 @@
                     height: 100%;
 
                     &-text{
-                        font-size: 1.8vw;
+                        font-size: 2.8vw;
 
                     }
                     &-line1{
-                        width: 4vw;
+                        width: 5vw;
     
                     }
                     &-line2{
-                        width: 4vw;
+                        width: 5vw;
     
                     }
                 }
