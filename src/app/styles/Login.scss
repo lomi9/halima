@@ -112,7 +112,7 @@ $transition-duration: 0.3s; // Durée de la transition
       height: 0; 
       border-left: 10px solid transparent; 
       border-right: 10px solid transparent; 
-      border-top: 10px solid $primary-color; 
+      border-top: 10px solid $secondary-color; 
     }
 
     &.active{

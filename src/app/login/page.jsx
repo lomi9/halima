@@ -41,7 +41,7 @@ export default  function LoginPage() {
           </div>
 
         </div>
-        <div>
+        <div className='w-full'>
             {activeTab === 'connexion' ? <LoginForm /> : <SignupForm />}
           </div>
 
