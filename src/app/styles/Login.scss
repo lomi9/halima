@@ -1,0 +1,132 @@
+@mixin center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+$main-color: #FDFEEC;
+$accent-color: #FF6947;
+$primary-color: #353333;
+$secondary-color: #254127;
+$section-color: #E2E1CB;
+$tabbutton-text-color: #7e755f;
+$tabbutton-bg-color: #b8ac8d84;
+$tabbutton-border-color: #a0957a; // Fond foncé pour le survol/actif
+$transition-duration: 0.3s; // Durée de la transition
+
+.login{
+    @include center;
+    width: 100%;
+
+    &__top{
+        margin-top: 50px;
+        width: 100%;
+        border-bottom: 1px solid $primary-color;
+
+        &-container{
+            @include center;
+            width: 60%;
+            height: 15vw;
+            border-right: 1px solid $primary-color;
+            border-top: 1px solid $primary-color;
+
+            &-title{
+                margin: 0;
+                @include center;
+                font-weight: 400;
+                font-size: 4vw;
+                color: $secondary-color;
+
+            }
+        }
+    }
+
+    &__menu{
+        @include center;
+        width: 100%;
+
+        &-container{
+            @include center;
+            width: 100%;
+
+            &-left{
+                @include center;
+                width: 50%;
+                font-size: 3vw;
+                text-transform: uppercase;
+                padding: 2vw 0;
+                font-weight: 200;
+                border-bottom: 1px solid $primary-color;
+                border-right: 1px solid $primary-color;
+                cursor: pointer;
+                transition: background-color $transition-duration ease;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    color: #E2E1CB;
+                }
+                &:active{
+                    background-color: $secondary-color;
+                    color: #E2E1CB
+                }
+            }
+            &-right{
+                @include center;
+                width: 50%;
+                font-size: 3vw;
+                text-transform: uppercase;
+                padding: 2vw 0;
+                font-weight: 200;
+                border-bottom: 1px solid $primary-color;
+                cursor: pointer;
+                transition: background-color $transition-duration ease;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    color: #E2E1CB;
+                }
+                &:active{
+                    background-color: $secondary-color;
+                    color: #E2E1CB
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width : 640px ){
+
+    .login{
+    
+        &__top{
+            margin-top: 60px;
+
+            &-container{
+                @include center;
+                width: 70%;
+
+                &-title{
+                    font-size: 5vw;
+    
+                }
+            }
+        }
+        &__menu{
+    
+            &-container{
+    
+                &-left{
+                    font-size: 4vw;
+                }
+                &-right{
+                    font-size: 4vw;
+
+                }
+    
+            }
+        }
+    }
+
+}

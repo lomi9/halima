@@ -61,15 +61,15 @@ export default function Navbar() {
   </div>
   <div className="navbar-end">
   <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex">
-    <Mail className='w-5 sm:w-7'/>
+    <Mail className='w-5 sm:w-7 hover:text-accent-color'/>
     </Link>
     <button className="btn btn-ghost btn-circle">
-      <div className="indicator">
-      <User className='w-5 sm:w-7'/>
+      <Link href="/login" className="indicator">
+      <User className='w-5 sm:w-7 hover:text-accent-color'/>
         <span className="badge badge-xs badge-primary indicator-item"></span>
-      </div>
+      </Link>
     </button>
-    <button className="btn btn-ghost btn-circle ">
+    <button className="btn btn-ghost btn-circle hover:text-accent-color ">
     <ShoppingBasket className='w-5 sm:w-7'/>
     </button>
   </div>

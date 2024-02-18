@@ -6,6 +6,7 @@ import "./styles/ProductsGallery.scss";
 import "./styles/ProductsDescription.scss";
 import "./styles/ProductCard.scss";
 import "./styles/LitleCard.scss";
+import "./styles/Login.scss";
 
 const kodchasan = Kodchasan({
   subsets: ["latin"],

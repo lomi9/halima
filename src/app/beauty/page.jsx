@@ -7,7 +7,7 @@ import ProductsGallery from '../components/ProductsGallery';
 import products from '../products.json';
 import RandomProducts from '../components/RandomProducts';
 
-export default function Page() {
+export default function BeautyPage() {
 
 const beautyImage = image.src;
 const beautyTitle = "Nos huiles de beauté";

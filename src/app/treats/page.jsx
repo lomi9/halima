@@ -7,7 +7,7 @@ import ProductsGallery from '../components/ProductsGallery';
 import products from '../products.json';
 import RandomProducts from '../components/RandomProducts';
 
-export default function Page() {
+export default function TreatsPage() {
 
 const gourmandisesImage = image.src;
 const gourmandisesTitle = "Nos gourmandises";

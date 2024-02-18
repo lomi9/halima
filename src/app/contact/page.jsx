@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import image from "../../../public/maroc-architecture.webp";
 import Contact from '../components/Contact';
 
-function page() {
+export default function ContactPage() {
 
 const contactImage = image.src;
 const contactTitle = "Contactez-nous !";
@@ -25,5 +25,3 @@ const contactParagraph = "";
     </>
   )
 }
-
-export default page
