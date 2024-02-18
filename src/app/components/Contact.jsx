@@ -17,7 +17,7 @@ function Contact() {
                     <textarea id="message" name="message" rows="4" className="mt-1 bg-main-color block w-full border border-primary-color shadow-sm py-2 px-3 focus:outline-none focus:ring-accent-color focus:border-accent-color"></textarea>
                 </div>
                 <div className='flex flex-wrap content-center justify-center'>
-                    <button type="submit" className="w-1/3 rounded-md kodchasan uppercase flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-accent-color hover:bg-accent-color focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-color">
+                    <button type="submit" className="w-1/3 cursor-pointer rounded-md kodchasan uppercase flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-accent-color focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-color hover:bg-main-color hover:text-accent-color hover:border-accent-color">
                         Envoyer
                     </button>
                 </div>
