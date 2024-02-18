@@ -1,8 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { useState }  from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import LoginForm from '../components/LoginForm';
+import SignupForm from '../components/SignupForm';
 
 export default  function LoginPage() {
+
+  const [activeTab, setActiveTab] = useState('connexion');
+
+
   return (
     <>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -19,17 +27,23 @@ export default  function LoginPage() {
         </div>
         <div className='login__menu'>
           <div className='login__menu-container'>
-            <div className='login__menu-container-left chakra'>
-              Connexion
+            <div className={`login__menu-container-left chakra ${activeTab === 'connexion' ? 'active' : ''}`}
+            onClick={() => setActiveTab('connexion')}
+            >
+            Connexion
             </div>
-            <div className='login__menu-container-right chakra'>
-              Inscription
+            <div className={`login__menu-container-right chakra ${activeTab === 'inscription' ? 'active' : ''}`}
+            onClick={() => setActiveTab('inscription')}
+            >
+            Inscription
             </div>
 
           </div>
 
         </div>
-
+        <div>
+            {activeTab === 'connexion' ? <LoginForm /> : <SignupForm />}
+          </div>
 
        </div>
        
