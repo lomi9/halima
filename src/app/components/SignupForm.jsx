@@ -9,7 +9,7 @@ function SignupForm() {
             <span className='line absolute bottom-0 left-[42%] w-[15vw] h-[1px] bg-primary-color'></span>
         </div>
         <div className='w-full flex flex-wrap content-center justify-center pt-[4vw] pb-[2vw] kodchasan font-normal'>
-            <span className='text-[#E83B32] kodchasan font-normal'>Erreur : Message d'erreur</span>
+            <span className='text-[#E83B32] kodchasan font-normal'>Erreur : Message d erreur</span>
         </div>
 
         <div className='signupform__content w-full flex flex-wrap flex-col content-center justify-center items-center'>
@@ -33,7 +33,7 @@ function SignupForm() {
 
             <label className="flex items-center gap-2 mb-4 chakra">
                 <input type="checkbox" className="checkbox checkbox-primary border border-solid border-primary-color" />
-                J'accepte les conditions
+                J&apos;accepte les conditions
             </label>
 
 

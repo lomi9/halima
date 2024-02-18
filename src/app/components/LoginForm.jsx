@@ -9,7 +9,7 @@ function LoginForm() {
             <span className='line absolute bottom-0 left-[35%] w-[30vw] h-[1px] bg-primary-color'></span>
         </div>
         <div className='w-full flex flex-wrap content-center justify-center pt-[4vw] pb-[2vw] kodchasan font-normal'>
-            <span className='text-[#E83B32] kodchasan font-normal'>Erreur : Message d'erreur</span>
+            <span className='text-[#E83B32] kodchasan font-normal'>Erreur : Message d erreur</span>
         </div>
 
         <div className='loginform__content w-full flex flex-wrap flex-col content-center justify-center items-center'>
