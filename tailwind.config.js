@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -14,6 +14,8 @@ module.exports = {
       },
       colors: {
         "accent-color": "#FF6947",
+        "border-accent": "#D04E31",
+        "hover-accent": "#B24128",
         "primary-color": "#353333",
         "secondary-color": "#254127",
         "main-color": "#FDFEEC",
@@ -21,6 +23,7 @@ module.exports = {
         "tabbutton-text-color": "#7e755f",
         "tabbutton-bg-color": "#b8ac8d84",
         "tabbutton-border-color": "#a0957a",
+        "clear-grey": "#9C8F8C",
       },
     },
   },

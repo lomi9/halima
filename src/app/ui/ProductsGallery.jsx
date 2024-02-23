@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import ProductsDescription from './ProductsDescription';
-import ProductCard from './ProductCard';
+import ProductsDescription from '../_components/(CategoriesPages)/ProductsDescription';
+import ProductCard from '../_components/(CategoriesPages)/ProductCard';
 
 gsap.registerPlugin(ScrollToPlugin);
 

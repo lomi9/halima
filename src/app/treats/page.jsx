@@ -1,13 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import ProductsBanner from '../components/ProductsBanner';
+import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/amandes_maroc.webp";
-import ProductsGallery from '../components/ProductsGallery';
-import products from '../products.json';
-import RandomProducts from '../components/RandomProducts';
+import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
+import RandomSection from '../_components/(Random_Products)/RandomSection';
 
 export default function TreatsPage() {
+
+  const category = 'treats';
 
 const gourmandisesImage = image.src;
 const gourmandisesTitle = "Nos gourmandises";
@@ -16,14 +15,12 @@ const gourmandisesParagraph = "Lorem ipsum dolor sit amet consectetur adipisicin
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Navbar/>
       <ProductsBanner image={gourmandisesImage} title={gourmandisesTitle} paragraph={gourmandisesParagraph}/>
       <div className="edible__content">
-        <ProductsGallery products={products.categories.treats}/>
+      <ProductsSection category={category}/>
       </div>
-      <RandomProducts/>
+      <RandomSection/>
     </main>
-    <Footer/>
    
    </>
   )

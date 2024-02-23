@@ -1,13 +1,12 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import ProductsBanner from '../components/ProductsBanner';
+import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/maroc-architecture.webp";
-import ProductsGallery from '../components/ProductsGallery';
-import products from '../products.json';
-import RandomProducts from '../components/RandomProducts';
+import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
+import RandomSection from '../_components/(Random_Products)/RandomSection';
 
 export default function BeautyPage() {
+
+  const category = 'beauty';
 
 const beautyImage = image.src;
 const beautyTitle = "Nos huiles de beauté";
@@ -16,14 +15,12 @@ const beautyParagraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Navbar/>
       <ProductsBanner image={beautyImage} title={beautyTitle} paragraph={beautyParagraph}/>
       <div className="edible__content">
-        <ProductsGallery products={products.categories.beauty}/>
+      <ProductsSection category={category}/>
       </div>
-      <RandomProducts/>
+      <RandomSection/>
     </main>
-    <Footer/>
    
    </>
   )

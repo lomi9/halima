@@ -1,12 +1,9 @@
 // RandomProducts.jsx
 import React from 'react';
 import LitleCard from './LitleCard';
-import productsData from '../products.json';
 
-function RandomProducts() {
-  // Transformez les produits en tableau et mélangez-les
-  const allProducts = Object.values(productsData.categories).flatMap(Object.values);
-  const shuffledProducts = allProducts.sort(() => 0.5 - Math.random());
+function RandomProducts({productList}) {
+
 
   return (
     <div className="random__products flex flex-wrap overflow-hidden w-screen mt-7 pb-28 bg-section-color">
@@ -17,14 +14,10 @@ function RandomProducts() {
         </div>
       </div>
               <div className="flex overflow-scroll pb-10">
-      {shuffledProducts.map((product) => (
+      {productList.map((item, index) => (
         <LitleCard
-        key={product.id}
-          title={product.title}
-          subtitle={product.subtitle}
-          image={product.image}
-          price={product.price}
-          category={product.category}
+        key={index}
+        product={item}
         />
       ))}
       </div>

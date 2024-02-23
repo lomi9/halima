@@ -1,6 +1,6 @@
 import React from 'react';
 import banner from '../../../public/maroc-architecture.webp';
-import Button from './Button';
+import Button from './(ui)/Button';
 import Image from 'next/image';
 
 function Banner() {

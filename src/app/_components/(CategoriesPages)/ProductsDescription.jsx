@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import image from "../../../public/oliviers.jpg";
-import proudly from "../../../public/proudly.png";
-import TabButton from './TabButton';
+"use client"
+
+import React, { useState, useEffect } from 'react';
+import image from "../../../../public/oliviers.jpg";
+import proudly from "../../../../public//proudly.png";
+import TabButton from '../(ui)/TabButton';
 import Image from 'next/image';
 
 function ProductsDescription({ product }) {
@@ -19,15 +21,19 @@ function ProductsDescription({ product }) {
     const getContent = () => {
         switch (activeTab) {
             case 'ingredients':
-                return product.ingredients;
+                return product?.attributes?.ingredients;
             case 'vertues':
-                return product.vertues; 
+                return product?.attributes?.benefits; 
             case 'utilisation':
-                return product.utilisation; 
+                return product?.attributes?.utilisation; 
             default:
                 return 'Contenu non disponible';
         }
     };
+
+    useEffect(() => {
+        setActiveTab('ingredients'); // Réinitialise l'onglet actif à chaque changement de produit
+      }, [product]);
 
 
   return (
@@ -43,18 +49,21 @@ function ProductsDescription({ product }) {
                         <Image layout="fill" src={proudly.src} className='description__content-left-content-img1-img' alt='Production marocaine'/>
                     </div>
                     <div className='description__content-left-content-img2 relative'>
-                        <Image layout="fill" src={image.src} className='description__content-left-content-img2-img' alt='paysage marocain'/>
+                                    <Image layout="fill" src={image.src} alt="image produit" className='description__content-right-text-content-top-image-img'/>
+                                
                     </div>
                 </div>
             </div>
             <div className='description__content-right'>
-                <h4 className='description__content-right-title kodchasan'>{product.title}</h4>
-                <p className='description__content-right-subtitle chakra'>- {product.subtitle}</p>
+                <h4 className='description__content-right-title kodchasan'>{product?.attributes?.title}</h4>
+                <p className='description__content-right-subtitle chakra'>- {product?.attributes?.size}</p>
                 <div className='description__content-right-text chakra'>
                     <div className='description__content-right-text-content chakra'>
                         <div className='description__content-right-text-content-top'>
                             <div className='description__content-right-text-content-top-image relative'>
-                                <Image layout="fill" src={product.image} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
+                            {product?.attributes?.image.data && (
+                                    <Image layout="fill" src={product?.attributes?.image.data.attributes?.url} alt="image produit" className='description__content-right-text-content-top-image-img'/> 
+                                )}
                             </div>
                         <p className='description__content-right-text-content-top-p chakra'>
                         {getContent()}

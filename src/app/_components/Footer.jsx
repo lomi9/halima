@@ -1,9 +1,14 @@
+"use client"
+import { useUser } from '@clerk/nextjs';
 import React from 'react';
 import logo from "../../../public/logo-rond.png";
 import Image from 'next/image';
 
 function Footer() {
-  return (
+
+  const {user}=useUser();
+
+  return user&&(
     <footer className='bg-primary-color flex flex-wrap flex-col w-screen'>
         <div className='flex flex-wrap justify-center p-5'> 
         <div className='w-20 h-20 relative'>
