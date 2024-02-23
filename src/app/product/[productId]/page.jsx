@@ -1,11 +1,10 @@
 "use client"
 
-import ProductBanner from '@/app/_components/(ProductPage)/ProductBanner'
-import ProductInfo from '@/app/_components/(ProductPage)/ProductInfo'
-import RandomSection from '@/app/_components/(Random_Products)/RandomSection'
-import Breadcrumb from '@/app/_components/Breadcrumb'
-import GlobalApi from '@/app/_utils/GlobalApi'
-import { usePathname } from 'next/navigation'
+import ProductBanner from '../../../app/_components/(ProductPage)/ProductBanner'
+import ProductInfo from '../../../app/_components/(ProductPage)/ProductInfo'
+import RandomSection from '../../../app/_components/(Random_Products)/RandomSection'
+import Breadcrumb from '../../../app/_components/Breadcrumb'
+import GlobalApi from '../../../app/_utils/GlobalApi'
 import React, { useEffect, useState } from 'react'
 
 export default function ProductPage ({params}) {
