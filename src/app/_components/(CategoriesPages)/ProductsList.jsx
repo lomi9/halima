@@ -1,12 +1,9 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import ProductCard from './ProductCard'
 import ProductsDescription from './ProductsDescription';
 
-gsap.registerPlugin(ScrollToPlugin);
 
 function ProductsList( {productList} ){
 
@@ -15,7 +12,6 @@ function ProductsList( {productList} ){
   const handleButtonClick = (product) => {
       setSelectedProduct(product);
     
-      gsap.to(window, {duration: 1, scrollTo: "#target-section"});
     };
 
     useEffect(() => {
