@@ -1,0 +1,44 @@
+@import "./variables";
+
+.cl-card{
+    font-family: 'Kodchasan', sans-serif;
+  font-weight: 600;
+  background-color: $main-color;
+}
+
+.cl-internal-b3fm6y{
+    background-color: $accent-color;
+}
+
+.cl-formButtonPrimary{
+    background-color: $accent-color;
+    font-family: 'Chakra-Petch', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    &:hover{
+        background-color: $hover-accent;
+    }
+}
+
+.cl-formFieldInput{
+    background-color: $main-color;
+}
+
+.cl-footerActionText{
+    display: flex;
+    align-items: center;
+}
+
+.cl-footerActionLink{
+    background-color: $secondary-color;
+    padding: 0.5vw 1vw ;
+    border-radius: 10px;
+    color: white!important;
+
+    &:hover{
+        color: $accent-color;
+        background-color: $secondary-hover;
+        text-decoration: none;
+    }
+
+}

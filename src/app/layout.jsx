@@ -2,6 +2,7 @@ import { Kodchasan, Judson, Chakra_Petch } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { frFR } from "@clerk/localizations";
 import "./globals.css";
+import "./styles/_variables.scss"
 import "./styles/HomeCategory.scss";
 import "./styles/ParallaxImage.scss";
 import "./styles/ProductsGallery.scss";
@@ -9,6 +10,8 @@ import "./styles/ProductsDescription.scss";
 import "./styles/ProductCard.scss";
 import "./styles/LitleCard.scss";
 import "./styles/Login.scss";
+import "./styles/_fonts.scss";
+import "./styles/Sign-In.scss";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 
