@@ -1,10 +1,13 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Link from 'next/link'
 import { Menu, X, User, ShoppingBasket, Mail, CheckCircle } from 'lucide-react';
 import logo from "../../../public/logo-rond.png";
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
+import { CartContext } from '../_context/CartContext';
+import GlobalApi from "../_utils/GlobalApi";
+import Cart from './Cart';
 
 
 export default function Navbar() {
@@ -13,6 +16,27 @@ export default function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
+
+  const {cart, setCart}=useContext(CartContext);
+
+  const [openCart,setOpenCart]=useState(false);
+
+  const getCartItem=()=>{
+    GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
+    .then(resp=>{
+      const result =resp.data.data
+
+        result&&result.forEach(prd =>{
+          setCart(cart=>[...cart,
+            {
+              id:prd.id,
+              product: prd.attributes.products.data[0]
+            }
+          ])
+        })
+
+    })
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,6 +55,15 @@ export default function Navbar() {
         document.removeEventListener('mousedown', closeMenu);
       };
     }, []);
+
+
+    useEffect(()=>{
+      user&&getCartItem();
+    }, [user])
+
+    useEffect(()=>{
+      openCart==false&&setOpenCart(true)
+    },[cart])
 
 
   return (
@@ -67,9 +100,17 @@ export default function Navbar() {
       <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex">
         <Mail className='w-5 sm:w-7 hover:text-accent-color'/>
       </Link>
-      <button className="btn btn-ghost btn-circle hover:text-accent-color ">
-        <ShoppingBasket className='w-5 sm:w-7'/> (1)
+
+      {openCart&&<Cart/>}
+
+
+      <button className="btn btn-ghost btn-circle hover:text-accent-color "
+      onClick={()=>setOpenCart(!openCart)}
+      >
+        <ShoppingBasket className='w-5 sm:w-7'/>
+        ({cart?.length})
       </button>
+
       <button className="btn btn-ghost btn-circle">
         {!user?
           <a href="/sign-in" className="indicator relative">

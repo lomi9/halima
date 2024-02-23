@@ -1,3 +1,4 @@
+"use client"
 import { Kodchasan, Judson, Chakra_Petch } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { frFR } from "@clerk/localizations";
@@ -14,6 +15,9 @@ import "./styles/_fonts.scss";
 import "./styles/Sign-In.scss";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import { CartContext } from "./_context/CartContext";
+import { useState } from "react";
+import GlobalApi from "./_utils/GlobalApi"
 
 const kodchasan = Kodchasan({
   subsets: ["latin"],
@@ -33,14 +37,18 @@ const chakrapetch = Chakra_Petch({
   variable: '--font-chakra', 
 });
 
-export const metadata = {
-  title: "Halima Garden",
-  description: "Produits marrocains d'exception",
-};
+//export const metadata = {
+//  title: "Halima Garden",
+//  description: "Produits marrocains d'exception",
+//};
 
 export default function RootLayout({ children }) {
+
+const [cart, setCart]=useState([]);
+
   return (
     <ClerkProvider localization={frFR}>
+      <CartContext.Provider value={{cart, setCart}}>
     <html lang="fr" data-theme="mytheme">
       <body className={`${kodchasan.variable} ${judson.variable} ${chakrapetch.variable}`}>
         <Navbar/>
@@ -48,6 +56,7 @@ export default function RootLayout({ children }) {
         <Footer/>
       </body>
     </html>
+    </CartContext.Provider>
     </ClerkProvider>
   );
 }

@@ -27,8 +27,20 @@ const getProductByCategory = (category) =>
     "/products?filters[category][$eq]=" + category + "&populate=*"
   );
 
-export default {
+const addToCart = (data) => axiosClient.post("/carts", data);
+
+const getUserCartItems = (email) =>
+  axiosClient.get(
+    "http://localhost:1337/api/carts?populate[products][populate][0]=image&filters[email][$eq]=" +
+      email
+  );
+
+const apiMethods = {
   getProducts,
   getProductById,
   getProductByCategory,
+  addToCart,
+  getUserCartItems,
 };
+
+export default apiMethods;

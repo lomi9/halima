@@ -1,17 +1,45 @@
 import { useUser } from '@clerk/nextjs'
 import { BadgeAlert, BadgeCheck, ShoppingBasket } from 'lucide-react'
 import { useRouter } from 'next/navigation';
-import React from 'react'
+import GlobalApi from "../../_utils/GlobalApi"
+import React, { useContext } from 'react'
+import { CartContext } from '../../../app/_context/CartContext';
 
 function ProductInfo({product}) {
 
   const {user}=useUser();
   const router=useRouter();
+  const {cart,setCart}=useContext(CartContext);
   const onAddToCartClick=()=> {
     if(!user)
     {
       router.push('/sign-in')
       return;
+    }
+    else{
+      const data={
+        data:{
+          userName:user.fullName,
+          email:user.primaryEmailAddress.emailAddress,
+          products:product?.id
+        }
+      }
+      GlobalApi.addToCart(data).then(resp=>{
+        console.log("Add to cart",resp);
+        if(resp)
+        {
+          setCart(cart=>[...cart,
+            {
+              id:resp?.data?.id,
+              product:product
+            }
+          ])
+        }
+
+      },(error)=>{
+        console.log("Erreur",error)
+      }
+      )
     }
   }
 
