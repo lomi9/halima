@@ -11,7 +11,7 @@ function Cart() {
     <ul className="p-0">
 
         {cart.map((item,index)=>(
-      <li className="flex items-center gap-4">
+      <li className="flex items-center gap-4" key={index}>
       <img
         src={item?.product?.attributes?.image?.data?.attributes?.url}
         alt={item?.product?.attributes?.title}
