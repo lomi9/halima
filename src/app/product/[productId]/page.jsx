@@ -5,7 +5,7 @@ import ProductInfo from '../../../app/_components/(ProductPage)/ProductInfo'
 import RandomSection from '../../../app/_components/(Random_Products)/RandomSection'
 import Breadcrumb from '../../../app/_components/Breadcrumb'
 import GlobalApi from '../../../app/_utils/GlobalApi'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 
 export default function ProductPage ({params}) {
 
@@ -13,17 +13,20 @@ export default function ProductPage ({params}) {
     const [productDetail, setProductDetail]=useState();
     const [category, setCategory] = useState('');
 
-    useEffect(() => {
-        params?.productId&&getProductById_();
-    }, [params?.productId])
+    const getProductById_ = useCallback(() => {
+        if (params?.productId) {
+            GlobalApi.getProductById(params.productId).then(resp => {
+                const productData = resp.data.data;
+                setProductDetail(productData);
+                setCategory(productData?.attributes?.category);
+            });
+        }
+    }, [params?.productId]);
 
-    const getProductById_=()=>{
-        GlobalApi.getProductById(params?.productId).then(resp=>{
-            const productData = resp.data.data;
-            setProductDetail(resp.data.data);
-            setCategory(productData?.attributes?.category);
-        })
-    }
+    // Mise à jour de useEffect pour utiliser la fonction mémorisée
+    useEffect(() => {
+        getProductById_();
+    }, [getProductById_]);
 
   return (
     <div className='pt-20 '> 

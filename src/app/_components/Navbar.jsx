@@ -51,7 +51,6 @@ export default function Navbar() {
             <li><Link href="/beauty" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles de beauté</Link></li>
             <li><Link href="/spices" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Épices</Link></li>
             <li><Link href="/treats" onClick={toggleMenu}className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Gourmandises</Link></li>
-            <li><Link href="/test" onClick={toggleMenu}className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Test</Link></li>
             <li><Link href="/contact" onClick={toggleMenu}className='hover:text-accent-color font-semibold p-2 chakra text-lg text-primary-color flex sm:hidden'>Contact</Link></li>
           </ul>
       </div>
