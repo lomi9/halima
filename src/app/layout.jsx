@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
 const [cart, setCart]=useState([]);
 
   return (
-    <ClerkProvider localization={frFR}>
+    <ClerkProvider localization={frFR} publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <CartContext.Provider value={{cart, setCart}}>
     <html lang="fr" data-theme="mytheme">
       <body className={`${kodchasan.variable} ${judson.variable} ${chakrapetch.variable}`}>
