@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../_context/CartContext'
+import Link from 'next/link';
 
 function Cart() {
 
@@ -8,7 +9,7 @@ function Cart() {
   return (
     <div className='h-[300px] w-[250px] bg-main-color z-10 rounded-md absolute mx-10 mt-1 right-10 top-12 p-5 border border-solid border-primary-color shadow-sm overflow-auto'>
 <div className="mt-4 space-y-6">
-    <ul className="p-0">
+    <ul className="p-0 kodchasan">
 
         {cart.map((item,index)=>(
       <li className="flex items-center gap-4" key={index}>
@@ -40,19 +41,13 @@ function Cart() {
       <div className="space-y-4 text-center">
 
 
-      <a
-        href="#"
-        className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+      <Link
+        href="/cart"
+        className="chakra block rounded bg-secondary-color px-5 py-3 text-sm text-main-color hover:text-main-color font-thin hover:font-normal transition hover:bg-secondary-hover"
       >
         Voir mon panier ({cart?.length})
-      </a>
+      </Link>
 
-      <a
-        href="#"
-        className="inline-block text-sm text-gray-500 underline underline-offset-4 transition hover:text-gray-600"
-      >
-        Continue shopping
-      </a>
     </div>
     </div>
   )

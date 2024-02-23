@@ -18,6 +18,7 @@ module.exports = {
         "hover-accent": "#B24128",
         "primary-color": "#353333",
         "secondary-color": "#254127",
+        "secondary-hover": "#2A532C",
         "main-color": "#FDFEEC",
         "section-color": "#E2E1CB",
         "tabbutton-text-color": "#7e755f",
