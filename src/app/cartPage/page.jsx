@@ -157,7 +157,7 @@ function CartPage() {
 ) : (
   <div className="text-center">
                             <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">Votre panier est vide</h2>
-                            <p className="text-gray-600">Vous n'avez ajouté aucun produit à votre panier.</p>
+                            <p className="text-gray-600">Vous n&apos;avez ajouté aucun produit à votre panier.</p>
                             {/* Vous pouvez également inclure un bouton ou un lien pour retourner à la boutique */}
                             <a
                                 href="/"
