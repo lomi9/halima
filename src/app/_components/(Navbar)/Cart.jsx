@@ -1,13 +1,20 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../_context/CartContext'
+import React, { useContext, forwardRef } from 'react'
+import { CartContext } from '../../_context/CartContext'
 import Link from 'next/link';
 
-function Cart() {
+const Cart = forwardRef(({ onCloseCart,...props }, ref) => {
 
-    const {cart,setCart}=useContext(CartContext);
+  const { cart } = useContext(CartContext);
+
+  const handleViewCartClick = () => {
+    if(onCloseCart) {
+      onCloseCart();
+    }
+  };
+
 
   return (
-    <div className='h-[300px] w-[250px] bg-main-color z-10 rounded-md absolute mx-10 mt-1 right-10 top-12 p-5 border border-solid border-primary-color shadow-sm overflow-auto'>
+    <div ref={ref} className='h-[300px] w-[250px] bg-main-color z-10 rounded-md absolute mx-10 mt-1 right-10 top-12 p-5 border border-solid border-primary-color shadow-sm overflow-auto'>
 <div className="mt-4 space-y-6">
     <ul className="p-0 kodchasan">
 
@@ -42,15 +49,18 @@ function Cart() {
 
 
       <Link
-        href="/cart"
+        href="/cartPage"
+        onClick={handleViewCartClick}
         className="chakra block rounded bg-secondary-color px-5 py-3 text-sm text-main-color hover:text-main-color font-thin hover:font-normal transition hover:bg-secondary-hover"
       >
         Voir mon panier ({cart?.length})
       </Link>
 
     </div>
+
     </div>
+    
   )
-}
+});
 
 export default Cart

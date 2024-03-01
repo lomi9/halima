@@ -1,7 +1,7 @@
 "use client"
 import { useUser } from '@clerk/nextjs';
 import React from 'react';
-import logo from "../../../public/logo-rond.png";
+import logo from "../../../public/logo-clear.png";
 import Image from 'next/image';
 
 function Footer() {

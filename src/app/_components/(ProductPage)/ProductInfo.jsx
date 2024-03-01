@@ -1,15 +1,18 @@
-import { useUser } from '@clerk/nextjs'
-import { BadgeAlert, BadgeCheck, ShoppingBasket } from 'lucide-react'
+import React, { useContext, useState } from 'react';
+import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-import GlobalApi from "../../_utils/GlobalApi"
-import React, { useContext } from 'react'
+import GlobalApi from "../../_utils/GlobalApi";
 import { CartContext } from '../../../app/_context/CartContext';
+import { BadgeAlert, BadgeCheck, ShoppingBasket } from 'lucide-react';
 
 function ProductInfo({product}) {
 
   const {user}=useUser();
   const router=useRouter();
   const {cart,setCart}=useContext(CartContext);
+  const [showAlert, setShowAlert] = useState(false);
+
+
   const onAddToCartClick=()=> {
     if(!user)
     {
@@ -24,16 +27,20 @@ function ProductInfo({product}) {
           products:product?.id
         }
       }
-      GlobalApi.addToCart(data).then(resp=>{
+      GlobalApi.addToCart(data).then(
+        (resp) => {
         console.log("Add to cart",resp);
         if(resp)
         {
-          setCart(cart=>[...cart,
+          setCart((cart) => [
+            ...cart,
             {
               id:resp?.data?.id,
               product:product
             }
-          ])
+          ]);
+          setShowAlert(true); 
+          setTimeout(() => setShowAlert(false), 6000);
         }
 
       },(error)=>{
@@ -42,6 +49,10 @@ function ProductInfo({product}) {
       )
     }
   }
+
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
 
   return (
     <div>
@@ -76,6 +87,52 @@ function ProductInfo({product}) {
             <ShoppingBasket className="text" />
             Ajouter
         </button>
+
+        {showAlert && (
+            <div role="alert" className="fixed bottom-5 z-10 right-5 w-[26vw] border border-solid border-clear-grey bg-main-color rounded-lg p-4">
+              <div className="flex items-start gap-4">
+                <span className="text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                  >
+                  <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                  </svg>
+                </span>
+
+                <div className="flex-1">
+                  <strong className="chakra block font-medium text-gray-900"> Ajouté au panier : </strong>
+
+                    <p className="chakra mt-1 text-sm text-gray-700">{product?.attributes?.title}</p>
+                </div>
+
+                  <button className="text-gray-500 transition hover:text-primary-color bg-main-color border-none cursor-pointer" onClick={closeAlert}>
+                    <span className="sr-only">Dismiss popup</span>
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="h-6 w-6"
+                      >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+                </div>
+            </div>
+                )}
+
+
     </div>
   </div>
   )

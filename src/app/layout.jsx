@@ -15,9 +15,9 @@ import "./styles/_fonts.scss";
 import "./styles/Sign-In.scss";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import TarteAuCitron from "./_components/TarteAuCitron";
 import { CartContext } from "./_context/CartContext";
 import { useState } from "react";
-import GlobalApi from "./_utils/GlobalApi"
 
 const kodchasan = Kodchasan({
   subsets: ["latin"],
@@ -42,15 +42,20 @@ const chakrapetch = Chakra_Petch({
 //  description: "Produits marrocains d'exception",
 //};
 
+
+
+
 export default function RootLayout({ children }) {
 
 const [cart, setCart]=useState([]);
+
 
   return (
     <ClerkProvider localization={frFR} publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <CartContext.Provider value={{cart, setCart}}>
     <html lang="fr" data-theme="mytheme">
       <body className={`${kodchasan.variable} ${judson.variable} ${chakrapetch.variable}`}>
+        <TarteAuCitron/>
         <Navbar/>
         {children}
         <Footer/>

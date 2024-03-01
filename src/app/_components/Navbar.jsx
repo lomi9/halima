@@ -1,26 +1,33 @@
 'use client'
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import Link from 'next/link'
-import { Menu, X, User, ShoppingBasket, Mail, CheckCircle } from 'lucide-react';
-import logo from "../../../public/logo-rond.png";
-import Image from 'next/image';
-import { UserButton, useUser } from '@clerk/nextjs';
+import { Menu, X, User, ShoppingBasket, Mail, CheckCircle, UserCheck } from 'lucide-react';
+import logo from "../../../public/logo-logo.svg";
+import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
 import { CartContext } from '../_context/CartContext';
 import GlobalApi from "../_utils/GlobalApi";
-import Cart from './Cart';
+import Cart from './(Navbar)/Cart';
+import UserLoggedIn from '../_components/(Navbar)/UserLoggedIn';
 
 
 export default function Navbar() {
 
   const {user}=useUser();
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef();
-
   const {cart, setCart}=useContext(CartContext);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openCart,setOpenCart]=useState(false);
+  const [isUserModalOpen, setIsUserModalOpen] = useState(false);
 
+  const menuRef = useRef();
+  const cartRef = useRef();
+  const userModalRef = useRef();
+
+  const handleCloseModalAndShowAlert = () => {
+    setIsUserModalOpen(false); // Ferme la modale
+    alert("Vous êtes bien déconnecté"); // Affiche l'alerte
+  };
+  
   const getCartItem=()=>{
     GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
     .then(resp=>{
@@ -42,6 +49,11 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleUserModal = () => {
+    event.stopPropagation(); 
+    setIsUserModalOpen(!isUserModalOpen);
+  };
+
     // Gestionnaire d'événements pour détecter les clics en dehors du menu
     useEffect(() => {
       const closeMenu = (e) => {
@@ -61,10 +73,40 @@ export default function Navbar() {
       user&&getCartItem();
     }, [user])
 
-    useEffect(()=>{
-      openCart==false&&setOpenCart(true)
-    },[cart])
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (openCart && cartRef.current && !cartRef.current.contains(event.target)) {
+          setOpenCart(false);
+        }
+      };
+  
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [openCart]);
 
+
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (userModalRef.current && !userModalRef.current.contains(event.target)) {
+          setIsUserModalOpen(false);
+        }
+      }
+  
+      document.addEventListener("mousedown", handleClickOutside);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [userModalRef]);
+
+    useEffect(() => {
+      if (!user) {
+        // L'utilisateur vient de se déconnecter
+        setIsUserModalOpen(false); // Ferme la modale
+      }
+    }, [user]);
 
   return (
     <>
@@ -89,11 +131,12 @@ export default function Navbar() {
       </div>
     </div>
     <div className="navbar-center flex-wrap content-center">
-      <Link href="/" className='h-10 w-10 relative'>
-        <Image src={logo.src} layout="fill" objectFit="cover" alt="Logo Halima Garden" className='object-cover w-10 h-full object-center'/>
-      </Link>
       <Link href="/" className="kodchasan hidden sm:flex  font-light btn btn-ghost text-xl flex-wrap content-center">
-        HALIMA GARDEN
+        <p>HALIMA</p> 
+        <div className='w-[30px] h-[30px] overflow-hidden'>
+        <img src={logo.src} layout="fill" objectFit="cover" alt="Logo Halima Garden" className='object-cover overflow-hidden w-full h-full object-center'/>
+        </div>
+        <p>GARDEN</p>
       </Link>
     </div>
     <div className="navbar-end">
@@ -101,27 +144,35 @@ export default function Navbar() {
         <Mail className='w-5 sm:w-7 hover:text-accent-color'/>
       </Link>
 
-      {openCart&&<Cart/>}
+      {openCart&&<Cart ref={cartRef} onCloseCart={() => setOpenCart(false)}/>}
 
 
-      <button className="btn btn-ghost btn-circle hover:text-accent-color "
+      <button className="btn relative btn-ghost btn-circle "
       onClick={()=>setOpenCart(!openCart)}
       >
-        <ShoppingBasket className='w-5 sm:w-7'/>
-        ({cart?.length})
+        <ShoppingBasket className={`w-5 sm:w-7 ${openCart ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+        <div className='chakra text-[1.3vw] absolute top-0 right-0 w-[20px] h-[20px] bg-accent-color flex items-center justify-center rounded-xl'>
+        {cart?.length}
+        </div>
       </button>
 
-      <button className="btn btn-ghost btn-circle">
         {!user?
           <a href="/sign-in" className="indicator relative">
-            <User className='w-5 sm:w-7 hover:text-accent-color'/>
+            <User className={`w-5 sm:w-7 ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
           </a>
           :
-          <div>
-            <UserButton/>
-          </div>
+          <button className="btn btn-ghost btn-circle" onClick={toggleUserModal}>
+
+            <UserCheck className={`w-5 sm:w-7 ${isUserModalOpen ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+          </button>
         }
-      </button>
+
+        {isUserModalOpen && (
+          <div ref={userModalRef}>
+            <UserLoggedIn onSignOut={handleCloseModalAndShowAlert} />
+            </div>
+        )}
+
     </div>
   </div>
 </>

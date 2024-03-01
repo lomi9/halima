@@ -25,6 +25,7 @@ module.exports = {
         "tabbutton-bg-color": "#b8ac8d84",
         "tabbutton-border-color": "#a0957a",
         "clear-grey": "#9C8F8C",
+        "primary-border": "#868282",
       },
     },
   },

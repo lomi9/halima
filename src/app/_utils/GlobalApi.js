@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY;
-const apiUrl = "http://localhost:1337/api";
+const apiUrl = "https://halima-garden-strapi.onrender.com/api";
 
 const axiosClient = axios.create({
   baseURL: apiUrl,
@@ -31,9 +31,11 @@ const addToCart = (data) => axiosClient.post("/carts", data);
 
 const getUserCartItems = (email) =>
   axiosClient.get(
-    "http://localhost:1337/api/carts?populate[products][populate][0]=image&filters[email][$eq]=" +
+    "https://halima-garden-strapi.onrender.com/api/carts?populate[products][populate][0]=image&filters[email][$eq]=" +
       email
   );
+
+const deleteCartItem = (id) => axiosClient.delete("carts/" + id);
 
 const apiMethods = {
   getProducts,
@@ -41,6 +43,7 @@ const apiMethods = {
   getProductByCategory,
   addToCart,
   getUserCartItems,
+  deleteCartItem,
 };
 
 export default apiMethods;
