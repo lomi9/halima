@@ -62,5 +62,6 @@ const Cart = forwardRef(({ onCloseCart,...props }, ref) => {
     
   )
 });
+Cart.displayName = 'Cart';
 
 export default Cart
