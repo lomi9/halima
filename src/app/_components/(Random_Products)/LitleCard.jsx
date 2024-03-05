@@ -15,7 +15,7 @@ export default function LitleCard({ product }) {
                     </div>
                     <div className='litle__card-content-product'>
                         <div className='litle__card-content-product-container relative'>
-                            <Image layout="fill" objectFit="cover" src={product?.attributes?.image.data.attributes?.url} alt='produit' className='litle__card-content-product-container-img'/>
+                            <Image  layout='fill' objectFit='cover' src={product?.attributes?.image.data.attributes?.url} alt='produit' className='litle__card-content-product-container-img'/>
                         </div>
                     </div>
                     <div className='litle__card-content-infos'>

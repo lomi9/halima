@@ -14,7 +14,7 @@ const Cart = forwardRef(({ onCloseCart,...props }, ref) => {
 
 
   return (
-    <div ref={ref} className='h-[300px] w-[250px] bg-main-color z-10 rounded-md absolute mx-10 mt-1 right-10 top-12 p-5 border border-solid border-primary-color shadow-sm overflow-auto'>
+    <div ref={ref} className='h-[300px] w-[250px] bg-main-color z-10 rounded-md absolute mx-10 mt-1 top-[90%] p-5 border border-solid border-primary-color shadow-lg overflow-auto'>
 <div className="mt-4 space-y-6">
     <ul className="p-0 kodchasan">
 
@@ -29,13 +29,13 @@ const Cart = forwardRef(({ onCloseCart,...props }, ref) => {
       <div>
         <h3 className="text-sm text-gray-900">{item?.product?.attributes?.title}</h3>
 
-        <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
+        <dl className="flex mt-0.5 space-y-px text-[10px] text-gray-600 w-full ">
           <div>
             <dt className="inline">{item?.product?.attributes?.size}</dt>
           </div>
 
-          <div className='flex justify-start'>
-            <dd className="inline">{item?.product?.attributes?.price}€</dd>
+          <div className='flex w-full justify-end'>
+            <dd className=" w-full flex justify-end">{item?.product?.attributes?.price}€</dd>
           </div>
         </dl>
       </div>
@@ -51,7 +51,7 @@ const Cart = forwardRef(({ onCloseCart,...props }, ref) => {
       <Link
         href="/cartPage"
         onClick={handleViewCartClick}
-        className="chakra block rounded bg-secondary-color px-5 py-3 text-sm text-main-color hover:text-main-color font-thin hover:font-normal transition hover:bg-secondary-hover"
+        className="chakra block rounded bg-secondary-color px-5 py-3 text-sm hover:text-main-color text-main-color font-thin hover:font-normal transition hover:bg-secondary-hover"
       >
         Voir mon panier ({cart?.length})
       </Link>

@@ -7,9 +7,9 @@ import "./styles/_variables.scss"
 import "./styles/HomeCategory.scss";
 import "./styles/ParallaxImage.scss";
 import "./styles/ProductsGallery.scss";
-import "./styles/ProductsDescription.scss";
 import "./styles/ProductCard.scss";
 import "./styles/LitleCard.scss";
+import "./styles/Presentation.scss";
 import "./styles/Login.scss";
 import "./styles/_fonts.scss";
 import "./styles/Sign-In.scss";

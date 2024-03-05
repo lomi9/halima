@@ -1,17 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import MinimalistButton from '../(ui)/MinimalistButton';
 
 
-function HomeCategory({ topImage, behindImage, title, paragraph, link }) {
+function HomeCategory({ topImage, behindImage, title, paragraph, btnLink, btnText }) {
+
   return (
     <section className='category'>
         <div className=' category__left'>
             <div className="category__left-image1">
-                <Image layout="fill" src={topImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center'/>
+                <Image layout="fill" src={topImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
             </div>
             <div className="category__left-image2">
-                <Image  layout="fill" src={behindImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center'/>
+                <Image  layout="fill" src={behindImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
             </div>
             <span className='category__left-line'></span>
             <div></div>
@@ -23,11 +25,7 @@ function HomeCategory({ topImage, behindImage, title, paragraph, link }) {
                 <h1 className='category__right-content-title kodchasan'>{title}</h1>
                 <span className='category__right-content-line'></span>
                 <p className='category__right-content-text chakra '>{paragraph}</p>
-                <div className='category__right-content-button'>
-                    <Link href={link} className='kodchasan category__right-content-button-btn btn-ghost'>Voir les produits</Link>
-                    <span className='category__right-content-button-line1'></span>
-                    <span className='category__right-content-button-line2'></span>
-                </div>
+                <MinimalistButton link={btnLink} btnText={btnText}/>
             </div>
         </div>
         

@@ -27,25 +27,29 @@ export default function Home() {
   const section1behindImage = section1image2.src;
   const section1title = "Huiles Alimentaires";
   const section1paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis soluta cumque alias numquam, deserunt beatae cupiditate qui, voluptatibus natus blanditiis exercitationem commodi possimus laborum maxime quis praesentium officiis consequuntur.";
-  const section1link = "/edible";
+  const section1btnLink = "/edible";
+  const section1btnText = "Voir les produits"
 
   const section2topImage = section2image1.src;
   const section2behindImage = section2image2.src;
   const section2title = "Huiles de Beauté";
   const section2paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis soluta cumque alias numquam, deserunt beatae cupiditate qui, voluptatibus natus blanditiis exercitationem commodi possimus laborum maxime quis praesentium officiis consequuntur.";
-  const section2link = "/beauty";
+  const section2btnLink = "/beauty";
+  const section2btnText = "Voir les produits"
 
   const section3topImage = section3image1.src;
   const section3behindImage = section3image2.src;
   const section3title = "Épices";
   const section3paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis soluta cumque alias numquam, deserunt beatae cupiditate qui, voluptatibus natus blanditiis exercitationem commodi possimus laborum maxime quis praesentium officiis consequuntur.";
-  const section3link = "/spices";
+  const section3btnLink = "/spices";
+  const section3btnText = "Voir les produits"
 
   const section4topImage = section4image1.src;
   const section4behindImage = section4image2.src;
   const section4title = "Gourmandises";
   const section4paragraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis soluta cumque alias numquam, deserunt beatae cupiditate qui, voluptatibus natus blanditiis exercitationem commodi possimus laborum maxime quis praesentium officiis consequuntur.";
-  const section4link = "/treats";
+  const section4btnLink = "/treats";
+  const section4btnText = "Voir les produits"
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -53,13 +57,13 @@ export default function Home() {
       <div id="content">
         <Presentation/>
         <ParallaxImage imageUrl={parallax1} />
-        <HomeCategory topImage={section1topImage} behindImage={section1behindImage} title={section1title} paragraph={section1paragraph} link={section1link}/>
+        <HomeCategory topImage={section1topImage} behindImage={section1behindImage} title={section1title} paragraph={section1paragraph} btnLink={section1btnLink} btnText={section1btnText}/>
         <ParallaxImage imageUrl={parallax2} />
-        <HomeCategory topImage={section2topImage} behindImage={section2behindImage} title={section2title} paragraph={section2paragraph} link={section2link}/>
+        <HomeCategory topImage={section2topImage} behindImage={section2behindImage} title={section2title} paragraph={section2paragraph} btnLink={section2btnLink} btnText={section2btnText}/>
         <ParallaxImage imageUrl={parallax3} />
-        <HomeCategory topImage={section3topImage} behindImage={section3behindImage} title={section3title} paragraph={section3paragraph} link={section3link}/>
+        <HomeCategory topImage={section3topImage} behindImage={section3behindImage} title={section3title} paragraph={section3paragraph} btnLink={section3btnLink} btnText={section3btnText}/>
         <ParallaxImage imageUrl={parallax4} />
-        <HomeCategory topImage={section4topImage} behindImage={section4behindImage} title={section4title} paragraph={section4paragraph} link={section4link}/>
+        <HomeCategory topImage={section4topImage} behindImage={section4behindImage} title={section4title} paragraph={section4paragraph} btnLink={section4btnLink} btnText={section4btnText}/>
       </div>
     </main>
   );

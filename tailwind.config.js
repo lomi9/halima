@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,7 +20,9 @@ module.exports = {
         "primary-color": "#353333",
         "secondary-color": "#254127",
         "secondary-hover": "#2A532C",
-        "main-color": "#FDFEEC",
+        "main-color": "#FFFFF7",
+        "yellow-main-color": "FDFEEC",
+        "main-hover": "#FDFDE5",
         "section-color": "#E2E1CB",
         "tabbutton-text-color": "#7e755f",
         "tabbutton-bg-color": "#b8ac8d84",

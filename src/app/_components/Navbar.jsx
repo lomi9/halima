@@ -45,61 +45,57 @@ export default function Navbar() {
     })
   }
 
+  const closeMenu = () => {
+      setIsMenuOpen(false);
+  };
+
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleUserModal = () => {
+  const toggleUserModal = (event) => {
     event.stopPropagation(); 
     setIsUserModalOpen(!isUserModalOpen);
+    closeMenu();
   };
 
-    // Gestionnaire d'événements pour détecter les clics en dehors du menu
-    useEffect(() => {
-      const closeMenu = (e) => {
-        if (menuRef.current && !menuRef.current.contains(e.target)) {
-          setIsMenuOpen(false);
-        }
-      };
-  
-      document.addEventListener('mousedown', closeMenu);
-      return () => {
-        document.removeEventListener('mousedown', closeMenu);
-      };
-    }, []);
+  const toggleCart = () => {
+    setOpenCart(!openCart);
+    closeMenu();
+};
 
 
-    useEffect(()=>{
-      user&&getCartItem();
-    }, [user])
 
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (openCart && cartRef.current && !cartRef.current.contains(event.target)) {
-          setOpenCart(false);
-        }
-      };
-  
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [openCart]);
-
-
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (userModalRef.current && !userModalRef.current.contains(event.target)) {
-          setIsUserModalOpen(false);
-        }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
       }
-  
-      document.addEventListener("mousedown", handleClickOutside);
-  
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [userModalRef]);
+      if (openCart && cartRef.current && !cartRef.current.contains(event.target)) {
+        setOpenCart(false);
+      }
+      if (userModalRef.current && !userModalRef.current.contains(event.target)) {
+        setIsUserModalOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [openCart]);
+
+
+
+  useEffect(() => {
+    if (user) {
+      getCartItem();
+    }
+  }, [user]);
+
+
+
 
     useEffect(() => {
       if (!user) {
@@ -110,71 +106,76 @@ export default function Navbar() {
 
   return (
     <>
-  <div className="navbar fixed bg-main-color top-3 p-0 w-full z-50 border-x-0 border-solid border border-secondary min-h-0">
+    <header className='flex fixed w-full bg-transparent py-[2vw] z-50'>
+  <div className="navbar bg-main-color top-3 p-0 w-full border-x-0 border-solid border border-secondary min-h-0">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" onClick={toggleMenu}>
+          
               {isMenuOpen ? (
-               <X className='h-5 w-5 text-primary-color'/>
+               <X className='h-[6vw] md:h-[2.5vw] w-[6vw] md:w-[2.5vw] text-primary-color'/>
               ) : (
-                <Menu className="h-5 w-5 text-primary-color" />
+                <Menu className="h-[6vw] md:h-[2.5vw] w-[6vw] md:w-[2.5vw] text-primary-color" />
               )}
         </div>
-          <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-main-color rounded-box w-52  ${isMenuOpen ? 'block' : 'hidden'}`} ref={menuRef}>
-            <li><Link href="/" onClick={toggleMenu} className=' hover:text-accent-color p-2 chakra text-lg text-primary-color'>Accueil</Link></li>
-            <li><Link href='/edible' onClick={toggleMenu} className=' hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles alimentaires</Link></li>
-            <li><Link href="/beauty" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles de beauté</Link></li>
-            <li><Link href="/spices" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Épices</Link></li>
-            <li><Link href="/treats" onClick={toggleMenu}className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Gourmandises</Link></li>
-            <li><Link href="/contact" onClick={toggleMenu}className='hover:text-accent-color font-semibold p-2 chakra text-lg text-primary-color flex sm:hidden'>Contact</Link></li>
+          <ul tabIndex={0} className={`menu menu-sm dropdown-content p-2 m-3 z-[1] shadow-md bg-main-color rounded-box w-52 border border-solid border-primary-color  ${isMenuOpen ? 'block' : 'hidden'}`} ref={menuRef}>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href="/" onClick={toggleMenu} className=' hover:text-accent-color chakra text-lg text-primary-color'>Accueil</Link></li>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href='/edible' onClick={toggleMenu} className=' hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles alimentaires</Link></li>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href="/beauty" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Huiles de beauté</Link></li>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href="/spices" onClick={toggleMenu} className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Épices</Link></li>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href="/treats" onClick={toggleMenu}className='hover:text-accent-color p-2 chakra text-lg text-primary-color'>Gourmandises</Link></li>
+            <li className='hover:bg-main-hover w-full px-2 m-0 rounded-box'><Link href="/contact" onClick={toggleMenu}className='hover:text-accent-color font-semibold p-2 chakra text-lg text-primary-color flex sm:hidden'>Contact</Link></li>
           </ul>
       </div>
+
     </div>
-    <div className="navbar-center flex-wrap content-center">
-      <Link href="/" className="kodchasan hidden sm:flex  font-light btn btn-ghost text-xl flex-wrap content-center">
-        <p>HALIMA</p> 
-        <div className='w-[30px] h-[30px] overflow-hidden'>
-        <img src={logo.src} layout="fill" objectFit="cover" alt="Logo Halima Garden" className='object-cover overflow-hidden w-full h-full object-center'/>
+    <div className="navbar-center flex-wrap content-center py-[0.5vw]">
+      <Link href="/" className="kodchasan flex  font-light btn btn-ghost text-[2.5vw] flex-wrap content-center">
+        <p className='kodchasan font-light text-[2.5vw] hidden sm:flex '>HALIMA</p> 
+        <div className='w-[50px] h-[50px] overflow-hidden'>
+        <img src={logo.src} layout="fill" objectfit="cover" alt="Logo Halima Garden" className='object-cover overflow-hidden w-full h-full object-center'/>
         </div>
-        <p>GARDEN</p>
+        <p className='kodchasan font-light text-[2.5vw] hidden sm:flex '>GARDEN</p>
       </Link>
     </div>
-    <div className="navbar-end">
-      <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex">
-        <Mail className='w-5 sm:w-7 hover:text-accent-color'/>
+    <div className="navbar-end px-[1.5vw] gap-3">
+      <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex hover:bg-main-hover">
+        <Mail className='w-full h-[60%] hover:text-accent-color'/>
       </Link>
 
       {openCart&&<Cart ref={cartRef} onCloseCart={() => setOpenCart(false)}/>}
 
 
-      <button className="btn relative btn-ghost btn-circle "
-      onClick={()=>setOpenCart(!openCart)}
+      <button className="btn relative btn-ghost btn-circle hover:bg-main-hover "
+      onClick={toggleCart}
       >
-        <ShoppingBasket className={`w-5 sm:w-7 ${openCart ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
-        <div className='chakra text-[1.3vw] absolute top-0 right-0 w-[20px] h-[20px] bg-accent-color flex items-center justify-center rounded-xl'>
+        <ShoppingBasket className={`w-full h-[60%] ${openCart ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+        <div className='chakra text-[15px] absolute top-0 right-0 w-[20px] h-[20px] bg-accent-color flex items-center justify-center rounded-xl font-normal'>
         {cart?.length}
         </div>
       </button>
 
         {!user?
-          <a href="/sign-in" className="indicator relative">
-            <User className={`w-5 sm:w-7 ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
+          <a href="/sign-in" className="indicator relative hover:bg-main-hover">
+            <User className={`w-full h-[60%] ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
           </a>
           :
-          <button className="btn btn-ghost btn-circle" onClick={toggleUserModal}>
+          <button className="btn btn-ghost btn-circle hover:bg-main-hover" onClick={toggleUserModal}>
 
-            <UserCheck className={`w-5 sm:w-7 ${isUserModalOpen ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+            <UserCheck className={`w-full h-[60%] ${isUserModalOpen ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
           </button>
         }
 
-        {isUserModalOpen && (
-          <div ref={userModalRef}>
-            <UserLoggedIn onSignOut={handleCloseModalAndShowAlert} />
-            </div>
-        )}
+<div
+  ref={userModalRef}
+  className={`user-logged-in-icon w-1 ${isUserModalOpen ? 'visible' : 'invisible'}`}
+>
+  <UserLoggedIn onSignOut={handleCloseModalAndShowAlert} />
+</div>
 
     </div>
-  </div>
+    </div>
+  </header>
 </>
   )
 }

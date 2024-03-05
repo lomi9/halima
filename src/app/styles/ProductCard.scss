@@ -1,3 +1,5 @@
+@import "./variables";
+
 .product__card{
             
     display: inline-block;
@@ -8,8 +10,11 @@
     height: auto;
     box-sizing: border-box;
     margin: 0 1.5vw;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.1s ease;
     box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.3);
+    &:hover{
+        background-color: #FEFFF2;
+    }
       
 
     &-content{
@@ -28,6 +33,7 @@
             justify-content: center;
 
             &-title{
+                color: $primary-color;
                 font-weight: 600;
                 font-size: 1.5vw;
                 display: flex;
@@ -39,6 +45,7 @@
                 text-align: center;
             }
             &-text{
+                color: $primary-color;
                 font-weight: 200;
                 font-size: 1.3vw;
                 display: flex;
@@ -83,6 +90,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 30px;
 
             &-top{
                 width: 100%;
@@ -90,14 +98,14 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 align-content: center;
-                padding-top: 2vw;
+                align-items: center;
 
                 &-btn{
                     background-color: #254127;
                         border: 1px solid #254127;
                         color: #FDFEEC;
                         text-transform: uppercase;
-                        padding: 0.6vw 2vw;
+                        padding: 1vw 2vw;
                         border-radius: 5px;
                         font-size: 1.2vw;
                         font-weight: 400;

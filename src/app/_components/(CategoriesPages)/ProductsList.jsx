@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard'
-import ProductsDescription from './ProductsDescription';
 
 
 function ProductsList( {productList} ){
@@ -39,7 +38,6 @@ function ProductsList( {productList} ){
       })}
     </div>
     <section id="target-section"> 
-    <ProductsDescription product={selectedProduct}/>
 </section>
 </>
   )

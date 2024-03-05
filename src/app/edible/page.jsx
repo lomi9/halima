@@ -3,6 +3,8 @@ import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/products-banner.jpg";
 import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
 import RandomSection from '../_components/(Random_Products)/RandomSection';
+import CategoryDescription from "../_components/(CategoriesPages)/CategoryDescription";
+import AllCategories from "../_components/(CategoriesPages)/AllCategories";
 
 
 export default function EdiblePage() {
@@ -18,8 +20,10 @@ export default function EdiblePage() {
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <ProductsBanner image={edibleImage} title={edibleTitle} paragraph={edibleParagraph}/>
       <div className="edible__content">
+      <CategoryDescription text={edibleParagraph} />
       <ProductsSection category={category}/>
       </div>
+      <AllCategories/>
         <RandomSection/>
       
     </main>

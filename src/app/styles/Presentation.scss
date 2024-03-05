@@ -1,0 +1,24 @@
+/* Ajoutez ce style dans votre fichier CSS global ou dans une balise <style> dans votre composant */
+.hero-presentation {
+    position: relative;
+    overflow: hidden; /* Empêche l'arrière-plan dépassant de déborder */
+  }
+  
+  .hero-presentation::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 20%; /* Largeur de la forme */
+    height: 60%; /* Hauteur de la forme */
+    border-radius: 50%;
+    background-image: url('/presentation-bg.svg'); /* Chemin vers votre image SVG */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%) scale(1.5); /* Ajustez la position et l'échelle */
+    //filter: blur(1px); /* Ajustez le flou selon le niveau de diffusion souhaité */
+    z-index: -1; /* S'assure que la forme est en arrière-plan */
+    opacity: 0.4; /* Ajustez l'opacité pour un effet plus subtil */
+  }
+  

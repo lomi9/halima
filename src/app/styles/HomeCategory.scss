@@ -51,7 +51,7 @@
             flex-wrap: wrap;
             padding-left: 2vw;
             padding-right: 4vw;
-            padding-bottom: 12vw;
+            padding-bottom: 2vw;
             align-content: space-between;
 
             &-title{
@@ -59,6 +59,7 @@
                 font-size: 2.5vw;
                 font-weight: 600;
                 text-transform: uppercase; 
+                margin: 1.2vw 0;
             }
 
             &-line{
@@ -69,7 +70,7 @@
                 color: #353333;
                 font-size: 1.6vw;
                 text-align: justify;
-                line-height: 2.6vw;
+                line-height: 3vw;
             }
 
             &-button{
@@ -117,6 +118,17 @@
 
 }
 
+@media ( min-width : 640px ) and (max-width : 768px){
+
+    .category__right-content{
+        padding: 0 2.5vw 0 1vw;
+
+        &-text{
+            font-size: 1.9vw;
+        }
+    }
+}
+
 
 @media ( max-width : 640px ){
 
@@ -152,7 +164,8 @@
         }
     
         &__right{
-            padding-top: 10vw;
+            padding-top: 15vw;
+            padding-bottom: 10vw;
             padding-left: 5vw;
             width: 100%;
             
@@ -163,6 +176,7 @@
                     font-size: 4.5vw;
                     font-weight: 600;
                     width: 100%;
+                    padding-bottom: 4vw;
                 }
 
                 &-line{
@@ -180,7 +194,8 @@
                     color: #353333;
                     font-size: 3.5vw;
                     text-align: left;
-                    line-height: 5vw;
+                    line-height: 6vw;
+                    padding-bottom: 12vw;
                 }
     
                 &-button{

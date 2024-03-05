@@ -11,7 +11,7 @@ export default function Page() {
       <Image
         src={banner.src}
         alt="oliviers"
-        layout="fill"
+        style={{ objectFit: 'cover' }}
         className="w-full h-full object-cover"
         
       />

@@ -69,9 +69,9 @@ function CartPage() {
 
     {cart.length > 0 ? (
       <>
-      <header className="text-center">
+      <div className="text-center">
         <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Mon panier</h1>
-      </header>
+      </div>
 
       <div className="mt-8">
         <ul className="space-y-4">
