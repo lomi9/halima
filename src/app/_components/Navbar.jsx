@@ -149,7 +149,7 @@ export default function Navbar() {
       <button className="btn relative btn-ghost btn-circle hover:bg-main-hover "
       onClick={toggleCart}
       >
-        <ShoppingBasket className={`w-full h-[60%] ${openCart ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+        <ShoppingBasket className={`w-full h-[60%] text-primary-color ${openCart ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
         <div className='chakra text-[15px] absolute top-0 right-0 w-[20px] h-[20px] bg-accent-color flex items-center justify-center rounded-xl font-normal'>
         {cart?.length}
         </div>
@@ -157,12 +157,12 @@ export default function Navbar() {
 
         {!user?
           <a href="/sign-in" className="indicator relative hover:bg-main-hover">
-            <User className={`w-full h-[60%] ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
+            <User className={`w-full h-[60%] text-primary-color ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
           </a>
           :
           <button className="btn btn-ghost btn-circle hover:bg-main-hover" onClick={toggleUserModal}>
 
-            <UserCheck className={`w-full h-[60%] ${isUserModalOpen ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
+            <UserCheck className={`w-full h-[60%] text-primary-color ${isUserModalOpen ? 'text-accent-color' : 'hover:text-accent-color'}`}/>
           </button>
         }
 
