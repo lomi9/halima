@@ -11,7 +11,7 @@ function ProductBanner({product}) {
         height={250}
         className='rounded-lg object-cover '
         />:
-        <div className='w-[200px] h-[250px] bg-green-200 rounded-lg animate-pulse'>
+        <div className='w-[200px] h-[250px] bg-skeleton-bg rounded-lg animate-pulse'>
 
         </div>}
     </div>
