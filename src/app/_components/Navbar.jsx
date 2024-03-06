@@ -57,10 +57,12 @@ export default function Navbar() {
   const toggleUserModal = (event) => {
     event.stopPropagation(); 
     setIsUserModalOpen(!isUserModalOpen);
+    if(isMenuOpen) setIsMenuOpen(false);
     closeMenu();
   };
 
-  const toggleCart = () => {
+  const toggleCart = (event) => {
+    event?.stopPropagation(); 
     setOpenCart(!openCart);
     closeMenu();
 };
@@ -69,8 +71,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!menuRef.current && !menuRef.current.contains(event.target)) {
-        closeMenu();
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+          setIsMenuOpen(false);
+          closeMenu();
       }
       if (openCart && cartRef.current && !cartRef.current.contains(event.target)) {
         setOpenCart(false);
@@ -107,7 +110,7 @@ export default function Navbar() {
   return (
     <>
     <header className='flex fixed w-full bg-transparent py-[2vw] z-50'>
-  <div className="navbar bg-main-color top-3 p-0 w-full border-x-0 border-solid border border-secondary min-h-0">
+  <div className="navbar bg-main-color top-3 p-0 w-full border-x-0 border-solid border border-secondary min-h-0 shadow-sm">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" onClick={toggleMenu}>

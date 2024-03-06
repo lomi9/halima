@@ -19,12 +19,15 @@ export default function EdiblePage() {
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <ProductsBanner image={edibleImage} title={edibleTitle} paragraph={edibleParagraph}/>
-      <div className="edible__content">
+      <div className="edible__content flex flex-wrap border-4 w-full">
       <CategoryDescription text={edibleParagraph} />
       <ProductsSection category={category}/>
       </div>
+      <div className="random__content flex flex-wrap border-4 w-full">
       <AllCategories/>
         <RandomSection/>
+      
+        </div>
       
     </main>
    
