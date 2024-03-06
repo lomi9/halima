@@ -27,6 +27,11 @@ export default function Navbar() {
     setIsUserModalOpen(false); // Ferme la modale
     alert("Vous êtes bien déconnecté"); // Affiche l'alerte
   };
+
+  const handleCloseUserModal = () => {
+    setIsUserModalOpen(false);
+  };
+  
   
   const getCartItem=()=>{
     GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
@@ -107,6 +112,10 @@ export default function Navbar() {
       }
     }, [user]);
 
+
+
+
+
   return (
     <>
     <header className='flex fixed w-full bg-transparent py-[2vw] z-50'>
@@ -173,7 +182,7 @@ export default function Navbar() {
   ref={userModalRef}
   className={`user-logged-in-icon w-1 ${isUserModalOpen ? 'visible' : 'invisible'}`}
 >
-  <UserLoggedIn onSignOut={handleCloseModalAndShowAlert} />
+  <UserLoggedIn onSignOut={handleCloseModalAndShowAlert} onClose={handleCloseUserModal}/>
 </div>
 
     </div>

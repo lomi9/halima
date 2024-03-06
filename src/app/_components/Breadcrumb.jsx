@@ -17,10 +17,10 @@ export default function Breadcrumb({category, product}) {
   return (
     <nav aria-label="Breadcrumb" className="flex w-full items-center justify-center">
       <ol className="flex overflow-hidden rounded-lg border-solid border border-tabbutton-bg-color text-gray-600 pl-0 ml-[2vw]">
-        <li className="flex items-center bg-section-color border border-blue-500 ">
+        <li className="flex items-center bg-section-color border  ">
           <Link
             href="/"
-            className="flex h-10 items-center border border-green-500 gap-1.5 px-4 transition hover:text-gray-900"
+            className="group flex text-primary-color h-10 items-center border gap-1.5 px-4 transition hover:text-gray-900"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,13 +37,13 @@ export default function Breadcrumb({category, product}) {
               />
             </svg>
 
-          <span className="chakra ms-1.5 text-xs font-medium"> 
+          <span className=" chakra ms-1.5 text-xs font-medium text-primary-color group-hover:font-bold"> 
           Home
           </span>
         </Link>
       </li>
 
-      <li className="relative flex items-center">
+      <li className="group relative flex items-center">
         <span
           className="absolute inset-y-0 -start-[0.1px] h-10 w-4 bg-section-color [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"
         >
@@ -51,21 +51,21 @@ export default function Breadcrumb({category, product}) {
 
         <Link
           href={categoryPath}
-          className=" chakra flex h-10 items-center bg-tabbutton-bg-color hover:bg-tabbutton-bg-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
+          className="text-primary-color group-hover:text-underline chakra flex h-10 items-center bg-tabbutton-bg-color hover:bg-tabbutton-bg-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
         >
         {displayCategory}
       </Link>
     </li>
 
     {product &&(
-    <li className="relative flex items-center">
+    <li className="relative group flex items-center">
       <span
-        className="absolute border-none inset-y-0 -start-[0px] h-10 w-4 bg-tabbutton-bg-color [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"
+        className=" group-hover:font-bold absolute border-none inset-y-0 -start-[0px] h-10 w-4 bg-tabbutton-bg-color [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"
       >
       </span>
 
       <a
-        className=" chakra flex h-10 items-center bg-main-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
+        className="group-hover:font-bold chakra flex h-10 items-center text-primary-color bg-yellow-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
       >
         {product}
       </a>
