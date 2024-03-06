@@ -1,4 +1,5 @@
 import { SignIn } from "@clerk/nextjs";
+import "../../../styles/Sign-In.scss";
 import Image from "next/image";
 import banner from "../../../../../public/maroc-architecture.webp";
  
@@ -11,6 +12,7 @@ export default function Page() {
       <Image
         src={banner.src}
         alt="oliviers"
+        layout="fill"
         style={{ objectFit: 'cover' }}
         className="w-full h-full object-cover"
         
