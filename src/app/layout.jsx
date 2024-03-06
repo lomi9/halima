@@ -15,7 +15,7 @@ import "./styles/_fonts.scss";
 import "./styles/Sign-In.scss";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
-import TarteAuCitron from "./_components/TarteAuCitron";
+import AxeptioCookies from "./_components/AxeptioCookies";
 import { CartContext } from "./_context/CartContext";
 import { useState } from "react";
 
@@ -55,7 +55,7 @@ const [cart, setCart]=useState([]);
       <CartContext.Provider value={{cart, setCart}}>
     <html lang="fr" data-theme="mytheme">
       <body className={`${kodchasan.variable} ${judson.variable} ${chakrapetch.variable}`}>
-        <TarteAuCitron/>
+        <AxeptioCookies/>
         <Navbar/>
         {children}
         <Footer/>
