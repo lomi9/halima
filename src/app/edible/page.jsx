@@ -18,7 +18,7 @@ export default function EdiblePage() {
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ProductsBanner image={edibleImage} title={edibleTitle} paragraph={edibleParagraph}/>
+      <ProductsBanner image={edibleImage} title={edibleTitle}/>
       <div className="edible__content flex flex-wrap border-4 w-full">
       <CategoryDescription text={edibleParagraph} />
       <ProductsSection category={category}/>

@@ -3,6 +3,8 @@ import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/epices_maroc.webp";
 import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
 import RandomSection from '../_components/(Random_Products)/RandomSection';
+import CategoryDescription from "../_components/(CategoriesPages)/CategoryDescription";
+import AllCategories from "../_components/(CategoriesPages)/AllCategories";
 
 export default function SpicesPage() {
 
@@ -15,11 +17,16 @@ const epicesParagraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ProductsBanner image={epicesImage} title={epicesTitle} paragraph={epicesParagraph}/>
-      <div className="edible__content">
+      <ProductsBanner image={epicesImage} title={epicesTitle}/>
+      <div className="spices__content flex-wrap border-4 w-full">
+      <CategoryDescription text={epicesParagraph} />
       <ProductsSection category={category}/>
+      <AllCategories/>
       </div>
-      <RandomSection/>
+      <div className="random__content flex flex-wrap border-4 w-full">
+        <RandomSection/>
+      
+        </div>
     </main>
    
    </>

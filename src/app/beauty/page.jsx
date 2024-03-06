@@ -3,6 +3,8 @@ import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/maroc-architecture.webp";
 import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
 import RandomSection from '../_components/(Random_Products)/RandomSection';
+import CategoryDescription from "../_components/(CategoriesPages)/CategoryDescription";
+import AllCategories from "../_components/(CategoriesPages)/AllCategories";
 
 export default function BeautyPage() {
 
@@ -15,11 +17,16 @@ const beautyParagraph = "Lorem ipsum dolor sit amet consectetur adipisicing elit
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ProductsBanner image={beautyImage} title={beautyTitle} paragraph={beautyParagraph}/>
-      <div className="edible__content">
+      <ProductsBanner image={beautyImage} title={beautyTitle}/>
+      <div className="beauty__content flex flex-wrap border-4 w-full">
+      <CategoryDescription text={beautyParagraph} />
       <ProductsSection category={category}/>
+      <AllCategories/>
       </div>
-      <RandomSection/>
+      <div className="random__content flex flex-wrap border-4 w-full">
+        <RandomSection/>
+      
+        </div>
     </main>
    
    </>

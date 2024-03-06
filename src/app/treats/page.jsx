@@ -3,6 +3,8 @@ import ProductsBanner from '../_components/(CategoriesPages)/ProductsBanner';
 import image from "../../../public/amandes_maroc.webp";
 import ProductsSection from '../_components/(CategoriesPages)/ProductsSection';
 import RandomSection from '../_components/(Random_Products)/RandomSection';
+import CategoryDescription from "../_components/(CategoriesPages)/CategoryDescription";
+import AllCategories from "../_components/(CategoriesPages)/AllCategories";
 
 export default function TreatsPage() {
 
@@ -15,11 +17,16 @@ const gourmandisesParagraph = "Lorem ipsum dolor sit amet consectetur adipisicin
   return (
    <>
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ProductsBanner image={gourmandisesImage} title={gourmandisesTitle} paragraph={gourmandisesParagraph}/>
-      <div className="edible__content">
+      <ProductsBanner image={gourmandisesImage} title={gourmandisesTitle}/>
+      <div className="treats__content flex flex-wrap border-4 w-full">
+      <CategoryDescription text={gourmandisesParagraph} />
       <ProductsSection category={category}/>
+      <AllCategories/>
       </div>
-      <RandomSection/>
+      <div className="random__content flex flex-wrap border-4 w-full">
+        <RandomSection/>
+      
+        </div>
     </main>
    
    </>
