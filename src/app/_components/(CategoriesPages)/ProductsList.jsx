@@ -23,7 +23,7 @@ function ProductsList( {productList} ){
   }, [productList]);
 
   const Skeleton = () => (
-    <div className="skeleton-product-card w-[65vw] h-[75vw] sm:w-[23vw] sm:h-[20vw] bg-skeleton-bg animate-pulse mr-[3vw]">
+    <div className="skeleton-product-card w-[65vw] h-[85vw] sm:w-[27vw] sm:h-[35vw] bg-skeleton-bg animate-pulse m-[1.7vw] mr-[5.5vw] sm:m-[1.5vw] inline-block">
     </div>
   );
 
@@ -32,7 +32,7 @@ function ProductsList( {productList} ){
     <>
     <div className='products__content whitespace-nowrap scroll-smooth'>
     {isLoading ? (
-      <div className='skeleton-cards-container flex w-auto px-0 py-[5vw] overflow-hidden'>
+      <div className='skeleton-cards-container w-auto px-0 py-[5vw] overflow-hidden'>
           <Skeleton />
           <Skeleton />
           <Skeleton />
