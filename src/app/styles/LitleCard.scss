@@ -1,10 +1,32 @@
+@import "./variables";
+
+.random-products-list{
+    &::-webkit-scrollbar {
+        width: 2px; 
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: transparent; /* color of the tracking area */
+        border: none;
+    }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color:#35333336; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 1px solid transparent; /* creates padding around scroll thumb */
+        cursor: pointer;
+        width: 20px;
+    }
+}
+
+
 .litle__card{
             
     display: inline-block;
     background-color: #FDFEEC;
     border: 1px solid #353333;
-    width: 22vw;
-    min-width: 22vw;
+    width: 24vw;
+    min-width: 24vw;
     height: auto;
     box-sizing: border-box;
     margin: 0 2.5vw;
@@ -86,32 +108,14 @@
             justify-content: center;
 
             &-top{
-                width: 100%;
+                width: 90%;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-content: center;
                 padding-top: 2vw;
 
-                &-btn{
-                    background-color: #254127;
-                        border: 1px solid #254127;
-                        color: #FDFEEC !important;
-                        text-transform: uppercase;
-                        padding: 0.6vw 1.8vw;
-                        border-radius: 5px;
-                        font-size: 1vw;
-                        font-weight: 400;
-                        cursor: pointer;
-
-                        &:hover{
-                            color: #254127;
-                            background-color:#25412784;
-                            border: 1px solid #254127;
-                            font-weight: 800;
-                        }
-
-                }
+                
 
             }
             &-bottom{
@@ -142,48 +146,29 @@
                     justify-content: center;
 
                     &-btn{
-                        position: relative;
                         width: 75%;
                         height: 3.5vw;
                         display: flex;
                         flex-wrap: wrap;
                         align-content: center;
                         justify-content: center;
-
-                        &-text{
-                            width: 100%;
-                            height: 100%;
-                            border: 1px solid #353333;
-                            font-size: 1vw;
-                            text-transform: uppercase;
-                            background-color: transparent;
-                            cursor: pointer;
-
-                            &:hover{
-                                background-color: #353333;
-                                color: #FDFEEC;
-                            }
-
-
+                        background-color: $addcart-button;
+                        border-radius: 5px;
+                        color: $yellow-color;
+                        cursor: pointer;
+                        border: 1px solid $addcart-button;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 1.2vw;
+                        &:hover{
+                            background-color: $addcart-hover;
+                            color: $addcart-button;
+                            border: 1px solid $addcart-button;
+                            font-weight: 800;
                         }
 
-                        &-line1{
-                            position: absolute;
-                            height: 1px;
-                            width: 3vw;
-                            top: 50%;
-                            left: -15%;
-                            background-color: #353333;
-                        }
-                        &-line2{
-                            position: absolute;
-                            top: 50%;
-                            right: -15%;
-                            height: 1px;
-                            width: 3vw;
-                            background-color: #353333;
-                        }
 
+                  
                     
                     }
 
@@ -284,19 +269,8 @@
             &-cta{
                 &-btn{
                     height: 100%;
-
-                    &-text{
-                        font-size: 2.8vw;
-
-                    }
-                    &-line1{
-                        width: 5vw;
-    
-                    }
-                    &-line2{
-                        width: 5vw;
-    
-                    }
+                    font-size: 2.5vw;
+                    height: 7vw;
                 }
 
             }

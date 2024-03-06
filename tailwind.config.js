@@ -31,6 +31,8 @@ module.exports = {
         "primary-border": "#868282",
         "green-hover": "#949E8A",
         "skeleton-bg": "#CDFF9B",
+        "addcart-button": "#FF6947",
+        "addcart-hover": "FFA590",
       },
     },
   },
