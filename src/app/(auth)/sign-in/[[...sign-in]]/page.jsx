@@ -6,7 +6,7 @@ import banner from "../../../../../public/maroc-architecture.webp";
 export default function Page() {
   return (
 
-<section className="bg-white z-[1000] relative">
+<section className="bg-yellow-color z-[1000] relative">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
     <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
       <Image
@@ -49,7 +49,7 @@ export default function Page() {
     </section>
 
     <main
-      className="flex bg-main-color items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+      className="flex bg-yellow-color items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
     >
      
   <SignIn appearance={{
