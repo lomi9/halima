@@ -12,9 +12,9 @@ function CategoryDescription({ text }) {
   const oliviersImg = oliviers;
 
   return (
-  <div className=' product-description bg-yellow-main-color w-[100vw] flex justify-center mt-10 mb-10 max-w-[100vw]'>
+  <div className=' product-description bg-yellow-main-color w-[100vw] flex flex-wrap justify-center mt-10 mb-10 max-w-[100vw]'>
 
-    <div className='w-[70%] m-0 p-0 kodchasan text-primary-color text-[1.8vw] flex flex-wrap justify-center items-center'>
+    <div className=' w-full sm:w-[70%] m-0 p-[5vw] sm:p-0 sm:pr-[6vw] chakra text-secondary-color text-[4vw] font-thin sm:text-[1.8vw] flex flex-wrap justify-center items-center'>
       {text}
     </div>
 
@@ -30,12 +30,12 @@ function CategoryDescription({ text }) {
       </div>
     </div>
 
-<div className='right-container w-[15%] h-auto'>
-  <div className=' image-top-container w-full overflow-hidden h-[200px] flex flex-wrap justify-center items-center content-center'>
+<div className='right-container w-full sm:w-[15%] h-auto py-[4vw] sm:p-0 flex flex-wrap flex-row sm:flex-col justify-evenly items-center content-center'>
+  <div className=' image-top-container w-[30%] sm:w-full overflow-hidden h-[40vw] sm:h-[20vw] flex flex-wrap justify-center items-center content-center'>
     <img src={proudly.src} alt='Fabriqué au maroc' layout='fill' className=' w-[130%] object-cover'/>
 
   </div>
-  <div className=' image-top-container w-full overflow-hidden h-[250px] flex flex-wrap justify-center items-center content-center'>
+  <div className=' image-top-container w-[30%] sm:w-full overflow-hidden h-[33vw] sm:h-[20vw] flex flex-wrap justify-center items-center content-center shadow-md'>
     <img src={oliviers.src} alt='Fabriqué au maroc' layout='fill' className=' w-full object-cover'/>
 
   </div>

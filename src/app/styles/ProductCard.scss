@@ -243,7 +243,7 @@
     }
 }
 
-@media (max-width : 640px ){
+@media (min-width : 640px ) and (max-width : 768px) {
 
     .product__card{
         width: 55vw;
@@ -275,6 +275,78 @@
         &-infos{
             &-top{
                 padding-top: 5.5vw;
+
+
+                &-btn{
+                    font-size: 3.5vw;
+                    padding: 2.5vw 5.2vw;
+            }
+        }
+        &-bottom{
+            padding: 7.5vw 0 5vw 0;
+            &-price{
+                font-size: 4.5vw;
+                margin: 0;
+
+            }
+            &-cta{
+                &-btn{
+                    height: 100%;
+
+                    &-text{
+                        font-size: 3.5vw;
+
+                    }
+                    &-line1{
+                        width: 5.5vw;
+    
+                    }
+                    &-line2{
+                        width: 5.5vw;
+    
+                    }
+                }
+
+            }
+
+        }
+        }
+    }
+    }
+}
+
+@media (max-width : 640px ){
+
+    .product__card{
+        width: 65vw;
+        min-width: 65vw;
+        margin: 3vw;
+
+        &-content{
+            &-header{
+                padding: 2vw 0;
+                &-title{
+                    font-size: 4.5vw;
+
+                }
+                &-text{
+                    font-size: 4vw;
+
+                }
+            }
+            
+            &-product{
+                height: 40vw;
+
+
+            &-container{
+                width: 40vw;
+
+            }
+        }
+        &-infos{
+            &-top{
+                padding-top: 0;
 
 
                 &-btn{

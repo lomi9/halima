@@ -8,7 +8,6 @@
     align-content: center;
     overflow: hidden;
     padding-bottom: 1vw;
-    border-radius: 30px;
 
     &__content{
         width: auto;
@@ -37,6 +36,6 @@
 @media (max-width : 640px ){
 
   .products__content{
-    padding: 5vw;
+    padding: 15vw 5vw;
   }
 }
