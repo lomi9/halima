@@ -22,9 +22,9 @@ export default function EdiblePage() {
       <div className="edible__content flex flex-wrap border-4 w-full">
       <CategoryDescription text={edibleParagraph} />
       <ProductsSection category={category}/>
+      <AllCategories/>
       </div>
       <div className="random__content flex flex-wrap border-4 w-full">
-      <AllCategories/>
         <RandomSection/>
       
         </div>

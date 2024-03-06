@@ -27,7 +27,7 @@ export default function RandomSection( ) {
     }
 
     return (
-      <div className='random-products flex flex-wrap w-full'>
+      <div className='random-products-section flex flex-wrap w-full'>
         {randomProducts && <RandomProducts productList={randomProducts} />}
       </div>
     );
