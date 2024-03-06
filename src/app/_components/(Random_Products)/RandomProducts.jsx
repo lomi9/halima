@@ -1,9 +1,22 @@
-// RandomProducts.jsx
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import LitleCard from './LitleCard';
 
 function RandomProducts({productList}) {
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (productList && Object.keys(productList).length > 0) {
+        setIsLoading(false);
+    }
+}, [productList]);
+
+const Skeleton = () => (
+  <div className="skeleton-product-card w-[65vw] h-[85vw] sm:w-[27vw] sm:h-[35vw] bg-skeleton-bg animate-pulse m-[1.7vw] mr-[5.5vw] sm:m-[1.5vw] inline-block">
+  </div>
+);
 
   return (
     <div className="random__product flex flex-wrap overflow-hidden w-screen mt-7 pb-28 bg-section-color">
@@ -14,13 +27,22 @@ function RandomProducts({productList}) {
         </div>
       </div>
               <div className="random-products-list flex overflow-scroll pb-10">
-      {productList.map((item, index) => (
+              {isLoading ? (
+      <div className='skeleton-cards-container w-auto px-0 py-[5vw] overflow-hidden'>
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+          </div>
+        ) : (
+      productList.map((item, index) => (
         <LitleCard
         key={index}
         product={item}
         />
-      ))}
+      ))
+      )}
       </div>
+     
     </div>
   );
 }
