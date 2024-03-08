@@ -119,7 +119,7 @@ export default function Navbar() {
 
   return (
     <>
-    <header className='flex fixed w-full bg-transparent py-[2vw] z-50'>
+    <header className='flex fixed w-full bg-transparent py-[2vw] z-50 max-h-[120px]'>
 
   <div className="navbar bg-yellow-color top-3 p-0 w-full border-x-0 border-solid border border-secondary min-h-0 shadow-sm">
     <div className="navbar-start">
