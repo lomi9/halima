@@ -172,7 +172,7 @@ export default function Navbar() {
 
         {!user?
           <a href="/sign-in" className="indicator relative hover:bg-main-hover">
-            <User className={`w-full h-[60%] text-primary-color ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
+            <User className={`w-full h-[60%] max-h-[25px] text-primary-color ${isUserModalOpen ? '' : 'hover:text-accent-color active:text-accent-color'}`}/>
           </a>
           :
           <button className="btn btn-ghost btn-circle hover:bg-main-hover" onClick={toggleUserModal}>
