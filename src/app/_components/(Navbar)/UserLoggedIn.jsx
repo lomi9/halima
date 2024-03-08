@@ -24,7 +24,7 @@ function UserLoggedIn({ onSignOut, onClose }) {
         </ul>
         </div>
 
-        <SignOutButton redirectTo="/" onSignOut={handleSignOut}>
+        <SignOutButton redirectto="/">
             <button className='chakra block rounded bg-secondary-color px-5 py-3 hover:text-secondary-color text-main-color font-normal transition hover:bg-green-hover border border-solid border-secondary-color text-[18px] sm:text-[18px] md:text-[18px] lg:text-[18px] cursor-pointer'>Se déconnecter</button>
         </SignOutButton>
     </div>

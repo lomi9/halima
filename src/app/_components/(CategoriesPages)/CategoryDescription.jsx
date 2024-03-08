@@ -32,11 +32,11 @@ function CategoryDescription({ text }) {
 
 <div className='right-container w-full sm:w-[15%] h-auto py-[4vw] sm:p-0 flex flex-wrap flex-row sm:flex-col justify-evenly items-center content-center'>
   <div className=' image-top-container w-[30%] sm:w-full overflow-hidden h-[40vw] sm:h-[20vw] flex flex-wrap justify-center items-center content-center'>
-    <img src={proudly.src} alt='Fabriqué au maroc' layout='fill' className=' w-[130%] object-cover'/>
+    <img src={proudly.src} alt='Fabriqué au maroc'  className=' w-[130%] object-cover'/>
 
   </div>
   <div className=' image-top-container w-[30%] sm:w-full overflow-hidden h-[33vw] sm:h-[20vw] flex flex-wrap justify-center items-center content-center shadow-md'>
-    <img src={oliviers.src} alt='Fabriqué au maroc' layout='fill' className=' w-full object-cover'/>
+    <img src={oliviers.src} alt='Fabriqué au maroc' className=' w-full object-cover'/>
 
   </div>
 

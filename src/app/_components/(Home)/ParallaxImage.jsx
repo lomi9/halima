@@ -29,7 +29,7 @@ function ParallaxImage({ imageUrl }) {
     
       return (
         <div className="parallax__container">
-          <Image layout="fill" ref={parallaxRef} src={imageUrl} alt="Patrimoine marocain"  className='parallax__container-img overflow-visible'/>
+          <Image fill ref={parallaxRef} src={imageUrl} alt="Patrimoine marocain"  className='parallax__container-img overflow-visible'/>
         </div>
       );
     }

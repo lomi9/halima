@@ -11,7 +11,7 @@ export default function Page() {
           <Image
             src={banner.src}
             alt="oliviers"
-            layout="fill"
+            fill
             className="w-full h-full object-cover"
             
           />

@@ -9,9 +9,9 @@ function CategoryCard({ img, text, link }) {
     <div className='relative w-full h-full overflow-hidden'>
         <Image 
           src={img} 
-          layout='fill' 
-          objectFit='cover' 
+          fill
           className='object-cover'
+          alt={text}
         />
       </div>
 

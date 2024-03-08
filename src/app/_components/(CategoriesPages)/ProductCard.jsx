@@ -72,7 +72,7 @@ export default  function ProductCard({product, onProductClick}) {
                             <Image 
                             src={product?.attributes?.image.data.attributes?.url} 
                             alt='produit' 
-                            layout='fill'
+                            fill
                             className='product__card-content-product-container-img'/>
                         </div>
                     </div>

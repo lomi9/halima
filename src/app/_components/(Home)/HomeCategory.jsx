@@ -10,10 +10,10 @@ function HomeCategory({ topImage, behindImage, title, paragraph, btnLink, btnTex
     <section className='category'>
         <div className=' category__left'>
             <div className="category__left-image1">
-                <Image layout="fill" src={topImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
+                <Image fill src={topImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
             </div>
             <div className="category__left-image2">
-                <Image  layout="fill" src={behindImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
+                <Image  fill src={behindImage} alt="Produit artisanal marocain" className='object-cover w-full h-full text-center shadow-lg'/>
             </div>
             <span className='category__left-line'></span>
             <div></div>
