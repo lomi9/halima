@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import GlobalApi from "../../_utils/GlobalApi";
 import { CartContext } from '../../../app/_context/CartContext';
 import { BadgeAlert, BadgeCheck, ShoppingBasket } from 'lucide-react';
+import ProductBanner from './ProductBanner';
 
 function ProductInfo({product}) {
 
@@ -18,6 +19,10 @@ function ProductInfo({product}) {
     {
       router.push('/sign-in')
       return;
+    } else if(!product?.id) {
+      console.error("L'ID du produit est undefined.");
+      return;
+  
     }
     else{
       const data={
@@ -56,28 +61,69 @@ function ProductInfo({product}) {
 
   return (
     <div>
-    <div className='p-[3vw]'>
-        <h2 className='infos__title kodchasan uppercase text-primary-color text-[4vw]'>
-            {product?.attributes?.title}
-        </h2>
-        <p className='infos__title chakra text-primary-color text-[2vw]'>
-            {product?.attributes?.size}
-        </p>
-        {product?.attributes?.stock > 0 && (
-        <div className='flex items-center gap-3'>
-          <BadgeCheck className='text-green-500'/>
-          <p className='chakra text-clear-grey text-[2.5vw]'>En stock</p>
+      <div className='top-content w-[100%] flex flex-wrap'>
+        <div className='flex flex-wrap w-[100%]'>
+          <div className='w-[5%]'>
+
+          </div>
+          <div className='top-bloc w-[95%] border border-solid border-primary-color border-r-transparent'>
+            <h2 className='px-[2vw] py-[2vw] m-0 infos__title kodchasan uppercase text-primary-color text-[3vw] font-normal w-full'>
+              {product?.attributes?.title}
+            </h2>
+          </div>
+        <div className='2-bloc w-full  flex flex-wrap'>
+          <div className='w-[5%]'>
+          </div>
+          <div className='w-[95%] flex'>
+            <div className='w-[50%] py-[2vw] flex flex-wrap justify-center align-center border border-solid border-primary-color border-t-0'>
+              <p className='m-0 infos__title chakra text-primary-color text-[1.6vw]'>
+                {product?.attributes?.size}
+              </p>
+            </div>
+          <div className='w-[50%] py-[2vw] flex flex-wrap justify-center align-center border border-solid border-r-primary-color border-t-0 border-l-0 border-r-0'>
+            {product?.attributes?.stock > 0 && (
+              <div className='flex items-center gap-3'>
+                <BadgeCheck className='text-green-500'/>
+                <p className='m-0 chakra text-tabbutton-border-color text-[1.6vw]'>En stock</p>
+              </div>
+            )}
+            {product?.attributes?.stock < 1 && (
+              <div className='flex items-center gap-3'>
+                <BadgeAlert className='text-red-500'/>
+                <p className='chakra text-red-500 text-[1.6vw]'>Produit en rupture de stock</p>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-      {product?.attributes?.stock < 1 && (
-        <div className='flex items-center gap-3'>
-          <BadgeAlert className='text-red-500'/>
-          <p className='chakra text-red-500 text-[2.5vw]'>Produit en rupture de stock</p>
-        </div>
-      )}
-        <p className='infos__title chakra text-primary-color text-[2vw]'>
-            {product?.attributes?.description}
-        </p>
+      </div>
+    </div>
+
+    <div className='flex flex-wrap w-[100%]'>
+      <div className='w-[5%]'>
+      </div>
+      <div className=' w-[95%] py-[3vw] flex flex-wrap justify-center border border-solid border-primary-color border-t-0'>
+              <div className='w-[45%] flex flex-wrap justify-center items-center '>
+                <ProductBanner product={product}/>
+              </div>
+              <div className='w-[55%] flex flex-wrap justify-center content-evenly'>
+                <div className='flex flex-wrap justify-content items-center w-full'>
+                  <p className='infos__title chakra pb-[4vw] pt-[2vw] pr-[2vw] text-primary-color text-[1.5vw]'>
+                    {product?.attributes?.description}
+                  </p>
+                </div>
+
+                <div className='bg-section-color w-[100%] mr-[4vw] h-[400px] rounded-lg'>
+                  <p className='chakra text-[1.6vw] p-[3vw]'>
+                    {product?.attributes?.utilisation}
+                  </p>
+                </div>
+              </div>
+      </div>
+
+
+
+    </div>
+
         <p className='infos__title chakra text-secondary-color text-[3vw]'>
             {product?.attributes?.price}€
         </p>

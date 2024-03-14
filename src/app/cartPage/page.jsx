@@ -24,20 +24,24 @@ function CartPage() {
       const productToDelete = cart.find(item => item.id === productId);
       if (!productToDelete) return;
 
-      GlobalApi.deleteCartItem(productToDelete.id).then(resp=>{
-        console.log(resp);
-        if(resp)
-        {
-          setAlertProduct(productToDelete.product);
-          setShowAlert(true);
-          setTimeout(() => setShowAlert(false), 6000);
-          getCartItem()
-        }
-      },(error)=>{
-        console.log("Erreur lors de la suppression de l'article du panier :", error);
+      GlobalApi.deleteCartItem(productToDelete.id)
+      .then(() => {
+        return GlobalApi.removeProductFromCart(productToDelete.product.id, 1);
       })
 
-    }
+      .then (() => {
+
+        setAlertProduct(productToDelete.product);
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 6000);
+        getCartItem()
+
+      })
+        .catch((error) => {
+          console.log("Erreur lors de la suppression de l'article du panier:", error);
+        });
+
+    };
 
     const getCartItem=()=>{
       GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)

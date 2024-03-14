@@ -27,7 +27,46 @@ const getProductByCategory = (category) =>
     "/products?filters[category][$eq]=" + category + "&populate=*"
   );
 
-const addToCart = (data) => axiosClient.post("/carts", data);
+const addToCart = async (data, email) => {
+  const productId = data.data.products;
+  const quantity = data.data.quantity || 1; //quantité ajoutée par l'utilisateur
+
+  console.log(
+    `Attempting to add product ${productId} with quantity ${quantity}`
+  );
+
+  // Récupération du produit pour vérifier le stock
+  const productResponse = await axiosClient.get(`/products/${productId}`);
+  console.log(productResponse);
+  const product = productResponse.data.data.attributes;
+
+  console.log(`Product stock: ${product.stock}`);
+  console.log(`Product stockInCart: ${product.stockInCart}`);
+
+  if (product.stock >= quantity) {
+    //Mise à jour du stock
+    const updatePayload = {
+      data: {
+        stock: product.stock - quantity,
+        stockInCart: (product.stockInCart || 0) + quantity,
+      },
+    };
+    await axiosClient.put(`/products/${productId}`, updatePayload);
+    // Ajout du produit au panier
+
+    const cartPayload = {
+      data: {
+        ...data.data,
+        user: email, // Supposons que vous avez un champ 'user' pour l'email dans votre modèle 'Cart'
+        addedAt: new Date().toISOString(), // Ajouter la date/heure actuelle
+      },
+    };
+
+    return axiosClient.post("/carts", cartPayload);
+  } else {
+    throw new Error("Stock insuffisant");
+  }
+};
 
 const getUserCartItems = (email) =>
   axiosClient.get(
@@ -37,6 +76,26 @@ const getUserCartItems = (email) =>
 
 const deleteCartItem = (id) => axiosClient.delete("carts/" + id);
 
+//Fonction pour gérer la suppression d'un article du panier et la mise à jour du stock
+const removeProductFromCart = async (productId, quantity) => {
+  // Récupération du produit
+  const productResponse = await axiosClient.get(`/products/${productId}`);
+  const product = productResponse.data.data.attributes;
+
+  // Vérification pour éviter des nombres négatifs
+  const newStockInCart =
+    product.stockInCart - quantity < 0 ? 0 : product.stockInCart - quantity;
+
+  // Mise à jour du stock et du stockInCart
+  const updatePayload = {
+    data: {
+      stock: product.stock + quantity,
+      stockInCart: newStockInCart,
+    },
+  };
+  await axiosClient.put(`/products/${productId}`, updatePayload);
+};
+
 const apiMethods = {
   getProducts,
   getProductById,
@@ -44,6 +103,7 @@ const apiMethods = {
   addToCart,
   getUserCartItems,
   deleteCartItem,
+  removeProductFromCart,
 };
 
 export default apiMethods;

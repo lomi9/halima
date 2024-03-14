@@ -23,16 +23,14 @@ export default function ProductPage ({params}) {
         }
     }, [params?.productId]);
 
-    // Mise à jour de useEffect pour utiliser la fonction mémorisée
     useEffect(() => {
         getProductById_();
     }, [getProductById_]);
 
   return (
-    <div className='pt-20 '> 
+    <div className='pt-[120px] '> 
             <Breadcrumb category={productDetail?.attributes?.category} product={productDetail?.attributes?.title}/>
-        <div className='flex flex-col mt-10 mb-10 sm:flex-row justify-evenly items-center gap-2'>
-            <ProductBanner product={productDetail}/>
+        <div className='flex flex-wrap mt-[5vw] w-[100%]'>
             <ProductInfo product={productDetail}/>
         </div>
         <RandomSection/>

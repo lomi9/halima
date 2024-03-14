@@ -155,7 +155,7 @@ export default function Navbar() {
     </div>
     <div className="navbar-end px-[1.5vw] gap-3">
       <Link href="/contact" className="btn btn-ghost btn-circle hidden sm:flex hover:bg-main-hover">
-        <Mail className='w-full h-[60%] hover:text-accent-color'/>
+        <Mail className='w-full h-[50%] hover:text-accent-color'/>
       </Link>
 
       {openCart&&<Cart ref={cartRef} onCloseCart={() => setOpenCart(false)}/>}
