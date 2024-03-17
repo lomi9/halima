@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY;
-const apiUrl = "https://halima-garden-strapi.onrender.com/api";
+const apiUrl = "http://localhost:1337/api";
+//const apiUrl = "https://halima-garden-strapi.onrender.com/api";
 
 const axiosClient = axios.create({
   baseURL: apiUrl,
