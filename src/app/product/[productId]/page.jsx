@@ -6,6 +6,7 @@ import RandomSection from '../../../app/_components/(Random_Products)/RandomSect
 import Breadcrumb from '../../../app/_components/Breadcrumb'
 import GlobalApi from '../../../app/_utils/GlobalApi'
 import React, { useEffect, useState, useCallback } from 'react'
+import AllCategories from '../../_components/(CategoriesPages)/AllCategories'
 
 export default function ProductPage ({params}) {
 
@@ -33,6 +34,7 @@ export default function ProductPage ({params}) {
         <div className='flex flex-wrap mt-[5vw] w-[100%]'>
             <ProductInfo product={productDetail}/>
         </div>
+        <AllCategories/>
         <RandomSection/>
     </div>
   )

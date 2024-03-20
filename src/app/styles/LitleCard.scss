@@ -152,18 +152,18 @@
                         flex-wrap: wrap;
                         align-content: center;
                         justify-content: center;
-                        background-color: $addcart-button;
+                        background-color: #254127;
                         border-radius: 5px;
-                        color: $yellow-color;
+                        color: #FDFEEC;
                         cursor: pointer;
-                        border: 1px solid $addcart-button;
+                        border: 1px solid #254127;
                         text-transform: uppercase;
                         font-weight: 600;
                         font-size: 1.2vw;
                         &:hover{
-                            background-color: $addcart-hover;
-                            color: $addcart-button;
-                            border: 1px solid $addcart-button;
+                            color: #254127;
+                            background-color:#25412784;
+                            border: 1px solid #254127;
                             font-weight: 800;
                         }
 

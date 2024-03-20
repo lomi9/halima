@@ -37,7 +37,7 @@ export default function Breadcrumb({category, product}) {
               />
             </svg>
 
-          <span className=" chakra ms-1.5 text-xs font-medium text-primary-color group-hover:font-bold"> 
+          <span className=" chakra ms-1.5 text-xs font-medium text-primary-color"> 
           Home
           </span>
         </Link>
@@ -51,7 +51,7 @@ export default function Breadcrumb({category, product}) {
 
         <Link
           href={categoryPath}
-          className="text-primary-color group-hover:text-underline chakra flex h-10 items-center bg-tabbutton-bg-color hover:bg-tabbutton-bg-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
+          className="text-primary-color chakra flex h-10 items-center bg-tabbutton-bg-color hover:bg-tabbutton-bg-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
         >
         {displayCategory}
       </Link>
@@ -60,15 +60,15 @@ export default function Breadcrumb({category, product}) {
     {product &&(
     <li className="relative group flex items-center">
       <span
-        className=" group-hover:font-bold absolute border-none inset-y-0 -start-[0px] h-10 w-4 bg-tabbutton-bg-color [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"
+        className=" cursor:default absolute border-none inset-y-0 -start-[0px] h-10 w-4 bg-tabbutton-bg-color [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"
       >
       </span>
 
-      <a
-        className="group-hover:font-bold chakra flex h-10 items-center text-primary-color bg-yellow-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
+      <p
+        className=" chakra cursor:default m-0 flex h-10 items-center text-primary-color bg-yellow-color pe-4 ps-8 text-xs font-medium transition hover:text-gray-900"
       >
         {product}
-      </a>
+      </p>
     </li>)}
 
   </ol>

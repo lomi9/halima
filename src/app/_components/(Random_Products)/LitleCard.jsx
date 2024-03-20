@@ -60,6 +60,8 @@ export default function LitleCard({ product }) {
         setShowAlert(false);
       };
 
+      const isOutOfStock = product?.attributes?.stock < 1;
+
 
     return (
         <article className="litle__card ">
@@ -81,10 +83,12 @@ export default function LitleCard({ product }) {
                             <p className='litle__card-content-infos-bottom-price chakra'>{product?.attributes?.price}€</p>
                             <div className='litle__card-content-infos-bottom-cta'>
                                 
-                                <button className='litle__card-content-infos-bottom-cta-btn kodchasan'
-                           onClick={()=>onAddToCartClick()}
+                                <button className={`litle__card-content-infos-bottom-cta-btn kodchasan ${isOutOfStock ? 'button-inactive' : ''}`}
+                            onClick={!isOutOfStock ? onAddToCartClick : undefined}
+                            disabled={isOutOfStock}
                             >
-                                Acheter</button>
+                                                                {isOutOfStock ? 'En rupture' : 'Acheter'}
+                                </button>
 
                             </div>
                         </div>

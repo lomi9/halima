@@ -26,14 +26,16 @@ function AllCategories() {
 
 
   return (
-    <div className="all__categories flex flex-wrap overflow-hidden w-screen mt-7 pb-28 bg-yellow-main-color">
-    <div className='w-full pt-12'>
+    <div className="all__categories flex flex-wrap overflow-hidden mt-7 pb-28 bg-yellow-main-color">
+    <div className='w-full pt-24'>
       <div className='relative flex flex-wrap justify-center content-center w-auto mb-[15vw] sm:mb-[8vw] mt-[2vw]'>
-      <h3 className='kodchasan font-light uppercase flex flex-wrap content-center justify-center text-secondary-color text-[6vw] sm:text-[2.5vw] m-1.5'>Toutes les catégories</h3>
+      <h3 className='kodchasan font-light uppercase flex flex-wrap content-center justify-center text-secondary-color text-[6vw] sm:text-[2.5vw] md:text-[3.7vw] m-1.5'>
+        Toutes les catégories
+        </h3>
       <span className='line bottom-0 absolute flex w-44 h-px bg-primary-color flex-wrap justify-center content-center'></span>
       </div>
-      <div className='flex flex-wrap w-full justify-evenly items-center px-[3vw] sm:px-[2vw]'>
-        <div className='w-[100%] sm:w-[50%] pb-[3vw] sm:pb-0 flex'>
+      <div className='flex flex-wrap w-full justify-evenly items-center px-[3vw] lg:px-[2vw]'>
+        <div className='w-[100%] lg:w-[50%] pb-[3vw] lg:pb-0 flex'>
           <div className='w-[50%] px-[2vw]'>
             <CategoryCard img={edibleImg} text={edibleText} link ={edibleLink} />
           </div>
@@ -41,7 +43,7 @@ function AllCategories() {
             <CategoryCard img={beautyImg} text={beautyText} link ={beautyLink} />
           </div>
         </div>
-        <div className='w-[100%] sm:w-[50%] flex'>
+        <div className='w-[100%] lg:w-[50%] flex'>
           <div className='w-[50%] px-[2vw]'>
             <CategoryCard img={spicesImg} text={spicesText} link ={spicesLink} />
           </div>

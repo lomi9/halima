@@ -2,7 +2,7 @@
 import { Kodchasan, Judson, Chakra_Petch } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { frFR } from "@clerk/localizations";
-import "./globals.css";
+import "./globals.scss";
 import "./styles/_variables.scss"
 import "./styles/HomeCategory.scss";
 import "./styles/ParallaxImage.scss";

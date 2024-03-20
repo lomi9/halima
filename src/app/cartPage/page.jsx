@@ -10,6 +10,7 @@ function CartPage() {
     const {user}=useUser();
     const [showAlert, setShowAlert] = useState(false);
     const [alertProduct, setAlertProduct] = useState(null);
+    const { isSignedIn } = user || {};
 
     const getTotalAmount=()=>{
         let totalAmount = 0;
@@ -19,46 +20,57 @@ function CartPage() {
         return totalAmount
     }
 
-    const deleteCartItem_=(productId)=>{
+    useEffect(() => {
+      if (isSignedIn) {
+        // L'utilisateur est connecté, récupérez les éléments du panier
+        getCartItem();
+      } else {
+        // L'utilisateur est déconnecté, videz le panier
+        setCart([]);
+      }
+    }, [isSignedIn]);
+  
+    function getCartItem() {
+      if (user?.primaryEmailAddress?.emailAddress) {
+        GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
+          .then(response => {
+            const cartItems = response.data.data.map(prd => ({
+              id: prd.id,
+              product: prd.attributes.products.data[0]
+            }));
+            setCart(cartItems);
+          })
+          .catch(error => console.error('Erreur lors de la récupération des articles du panier:', error));
+      }
+    }
 
-      const productToDelete = cart.find(item => item.id === productId);
-      if (!productToDelete) return;
+    const deleteCartItem_=(cartItemId)=>{
+      console.log("ID de l'article du panier à supprimer :", cartItemId);
 
-      GlobalApi.deleteCartItem(productToDelete.id)
-      .then(() => {
-        return GlobalApi.removeProductFromCart(productToDelete.product.id, 1);
-      })
+      const cartItemToDelete = cart.find(item => item.id === cartItemId);
+      console.log("Article du panier trouvé pour suppression :", cartItemToDelete);
+     
+      if (cartItemToDelete && cartItemToDelete.id) {
+
+      GlobalApi.deleteCartItem(cartItemToDelete.id)
+      .then(() => GlobalApi.removeProductFromCart(cartItemToDelete.product.id, 1))
 
       .then (() => {
-
-        setAlertProduct(productToDelete.product);
+        setAlertProduct(cartItemToDelete.product);
         setShowAlert(true);
         setTimeout(() => setShowAlert(false), 6000);
-        getCartItem()
+        setCart(currentCart => currentCart.filter(item => item.id !== cartItemToDelete.id));
 
       })
         .catch((error) => {
           console.log("Erreur lors de la suppression de l'article du panier:", error);
         });
+      } else {
+        console.log("Erreur: Aucun article du panier trouvé avec l'ID:", cartItemId);
+      }
 
     };
 
-    const getCartItem=()=>{
-      GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
-      .then(resp=>{
-        const result =resp.data.data
-        setCart([]);
-          result&&result.forEach(prd =>{
-            setCart(cart=>[...cart,
-              {
-                id:prd.id,
-                product: prd.attributes.products.data[0]
-              }
-            ])
-          })
-  
-      })
-    }
 
     const closeAlert = () => {
       setShowAlert(false);

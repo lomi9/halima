@@ -17,6 +17,7 @@ module.exports = {
         "accent-color": "#FF6947",
         "border-accent": "#D04E31",
         "hover-accent": "#B24128",
+        "bg-accent": "#FFD6CD",
         "primary-color": "#353333",
         "secondary-color": "#254127",
         "secondary-hover": "#2A532C",

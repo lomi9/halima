@@ -5,6 +5,9 @@ import GlobalApi from "../../_utils/GlobalApi";
 import { CartContext } from '../../../app/_context/CartContext';
 import { BadgeAlert, BadgeCheck, ShoppingBasket } from 'lucide-react';
 import ProductBanner from './ProductBanner';
+import PorteMaroc from "../../../../public/porte_maroc.webp";
+import ProductDetailsTabs from "./ProductDetailsTabs";
+import Image from 'next/image';
 
 function ProductInfo({product}) {
 
@@ -59,80 +62,81 @@ function ProductInfo({product}) {
     setShowAlert(false);
   };
 
-  return (
-    <div>
-      <div className='top-content w-[100%] flex flex-wrap'>
-        <div className='flex flex-wrap w-[100%]'>
-          <div className='w-[5%]'>
+  const isOutOfStock = product?.attributes?.stock < 1;
 
-          </div>
-          <div className='top-bloc w-[95%] border border-solid border-primary-color border-r-transparent'>
-            <h2 className='px-[2vw] py-[2vw] m-0 infos__title kodchasan uppercase text-primary-color text-[3vw] font-normal w-full'>
-              {product?.attributes?.title}
+  return (
+    <div className='relative flex flex-wrap justify-center'>
+      <div className='bg-image relative rounded-bl-md rounded-br-md w-full overflow-hidden'>
+        <img src={PorteMaroc.src} className=' h-[800px] w-full object-cover rounded-bottom' alt="Porte Maroc"/>
+      </div>
+      <div className='top-content absolute top-[7vw] left-0 sm:left-4 flex flex-wrap justify-center'>
+        <div className='flex flex-wrap w-[100%] justify-center'>
+          <div className='top-bloc w-[95%] sm:w-[90%] flex border bg-yellow-color border-solid border-primary-color'>
+            <h2 className='pl-[4vw] py-[3.5vw] m-0 infos__title kodchasan uppercase text-primary-color text-[3vw] font-normal items-center'>
+              {product?.attributes?.title} 
             </h2>
+            <p className='px-[2vw] py-[2vw] m-0 infos__size kodchasan text-primary-color text-[2.5vw] font-thin flex items-center'>
+             - {product?.attributes?.size} 
+            </p>
           </div>
-        <div className='2-bloc w-full  flex flex-wrap'>
-          <div className='w-[5%]'>
-          </div>
-          <div className='w-[95%] flex'>
-            <div className='w-[50%] py-[2vw] flex flex-wrap justify-center align-center border border-solid border-primary-color border-t-0'>
-              <p className='m-0 infos__title chakra text-primary-color text-[1.6vw]'>
-                {product?.attributes?.size}
-              </p>
-            </div>
-          <div className='w-[50%] py-[2vw] flex flex-wrap justify-center align-center border border-solid border-r-primary-color border-t-0 border-l-0 border-r-0'>
+        <div className='2-bloc w-[95%] sm:w-[90%] bg-yellow-color flex flex-wrap'>
+         
+          <div className='w-full flex'>
+            <div className='w-[50%]  py-[2vw] flex flex-wrap justify-center align-center border border-solid border-primary-color border-t-0'>
             {product?.attributes?.stock > 0 && (
               <div className='flex items-center gap-3'>
                 <BadgeCheck className='text-green-500'/>
-                <p className='m-0 chakra text-tabbutton-border-color text-[1.6vw]'>En stock</p>
+                <p className='m-0 chakra text-tabbutton-border-color text-[2.3vw] lg:text-[1.6vw]'>En stock</p>
               </div>
             )}
             {product?.attributes?.stock < 1 && (
               <div className='flex items-center gap-3'>
                 <BadgeAlert className='text-red-500'/>
-                <p className='chakra text-red-500 text-[1.6vw]'>Produit en rupture de stock</p>
+                <p className='chakra text-red-500 text-[2.3vw] lg:text-[1.6vw]'>Produit en rupture de stock</p>
               </div>
             )}
+            </div>
+          <div className='w-[50%] py-[2vw] flex flex-wrap justify-evenly align-center border border-solid border-r-primary-color border-t-0 border-l-0'>
+            <p className=' m-0 infos__title chakra text-primary-color text-[3.4vw] lg:text-[2vw] flex justify-center items-center'>
+                {product?.attributes?.price}€
+            </p>
+            <div className=' flex justify-center items-center'>
+              <button className={`flex gap-2 lg:gap-4 py-[2vw] lg:py-[1vw] px-[2.2vw] lg:px-[1.2vw] bg-accent-color border border-solid kodchasan uppercase flex-wrap justify-center items-end text-main-color rounded-lg border-border-accent font-normal text-[2.2vw] lg:text-[1.8vw] hover:bg-bg-accent hover:text-accent-color cursor-pointer ${isOutOfStock ? 'button-inactive' : ''}`}
+                                           onClick={!isOutOfStock ? onAddToCartClick : undefined}
+                                           disabled={isOutOfStock}
+                >
+                <ShoppingBasket className=" w-[2.3vw] lg:w-[1.7vw] h-[2.3vw] lg:h-[1.7vw] flex flex-wrap items-center" />
+                {isOutOfStock ? 'En rupture' : 'Acheter'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div className='flex flex-wrap w-[100%]'>
-      <div className='w-[5%]'>
-      </div>
-      <div className=' w-[95%] py-[3vw] flex flex-wrap justify-center border border-solid border-primary-color border-t-0'>
-              <div className='w-[45%] flex flex-wrap justify-center items-center '>
+    <div className='flex flex-wrap w-[95%] sm:w-[90%]'>
+      <div className=' w-[100%] bg-yellow-color py-0 sm:py-[5vw]  pb-[10vw] sm:pb-[7vw] flex flex-wrap justify-center border border-solid border-primary-color border-t-0 shadow-xl flex-col sm:flex-row'>
+              <div className='w-[100%] sm:w-[45%] flex flex-wrap justify-center items-center '>
                 <ProductBanner product={product}/>
               </div>
-              <div className='w-[55%] flex flex-wrap justify-center content-evenly'>
+              <div className=' w-full sm:w-[55%] flex flex-wrap justify-center content-evenly'>
                 <div className='flex flex-wrap justify-content items-center w-full'>
-                  <p className='infos__title chakra pb-[4vw] pt-[2vw] pr-[2vw] text-primary-color text-[1.5vw]'>
+                  <h4 className='infos__title chakra pb-[4vw] pt-[2vw] pr-[4vw] sm:pr-[2vw] pl-[4vw] sm:pl-0 text-primary-color text-[3.5vw] sm:text-[2vw] font-normal w-full flex '>
                     {product?.attributes?.description}
-                  </p>
+                  </h4>
                 </div>
 
-                <div className='bg-section-color w-[100%] mr-[4vw] h-[400px] rounded-lg'>
-                  <p className='chakra text-[1.6vw] p-[3vw]'>
-                    {product?.attributes?.utilisation}
-                  </p>
-                </div>
+                <ProductDetailsTabs product={product} />
               </div>
+     
+              
+              
+
       </div>
 
 
 
     </div>
-
-        <p className='infos__title chakra text-secondary-color text-[3vw]'>
-            {product?.attributes?.price}€
-        </p>
-        <button className='flex gap-2 p-4 bg-accent-color border border-solid kodchasan uppercase justify-center items-center text-main-color rounded-lg border-border-accent font-normal text-[3vw] px-10 hover:bg-hover-accent cursor-pointer'
-        onClick={()=>onAddToCartClick()}
-        >
-            <ShoppingBasket className="text" />
-            Ajouter
-        </button>
 
         {showAlert && (
             <div role="alert" className="fixed bottom-5 z-10 right-5 w-[26vw] border border-solid border-clear-grey bg-main-color rounded-lg p-4">

@@ -60,6 +60,8 @@ export default  function ProductCard({product, onProductClick}) {
         setShowAlert(false);
       };
 
+      const isOutOfStock = product?.attributes?.stock < 1;
+
   return (
     <div className="product__card">
         <article className='product__card-content'>
@@ -84,10 +86,12 @@ export default  function ProductCard({product, onProductClick}) {
                             <p className='product__card-content-infos-bottom-price chakra '>{product?.attributes?.price}€</p>
                             <div className='product__card-content-infos-bottom-cta'>
                             <div className='product__card-content-infos-top'>
-                            <button className='product__card-content-infos-top-btn kodchasan btn-ghost'
-                           onClick={()=>onAddToCartClick()}
+                            <button className={`product__card-content-infos-top-btn kodchasan btn-ghost ${isOutOfStock ? 'button-inactive' : ''}`}
+                            onClick={!isOutOfStock ? onAddToCartClick : undefined}
+                            disabled={isOutOfStock}
                             >
-                                Acheter</button>
+                                {isOutOfStock ? 'En rupture' : 'Acheter'}
+                                </button>
                         </div>
                             </div>
                         </div>

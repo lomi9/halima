@@ -19,7 +19,7 @@ function CategoryCard({ img, text, link }) {
 
         </div>
         <div className='absolute w-full h-full top-0 left-0 flex flex-wrap justify-center items-center'>
-        <h4 className=' transition-transform duration-300 relative text-main-color w-full kodchasan uppercase text-[4vw] sm:text-[1.7vw] group-hover:text-[1.8vw] font-thin flex flex-wrap justify-center items-center content center text-center'>
+        <h4 className=' transition-transform duration-300 relative text-main-color w-full kodchasan uppercase sm:text-[4vw] md:text-[3vw] lg:text-[4vw] group-hover:text-[1.8vw] font-thin flex flex-wrap justify-center items-center content center text-center'>
                 {text}
             </h4>
         </div>
