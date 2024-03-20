@@ -29,7 +29,7 @@ export default function ProductPage ({params}) {
     }, [getProductById_]);
 
   return (
-    <div className='pt-[120px] '> 
+    <div className='pt-[90px] '> 
             <Breadcrumb category={productDetail?.attributes?.category} product={productDetail?.attributes?.title}/>
         <div className='flex flex-wrap mt-[5vw] w-[100%]'>
             <ProductInfo product={productDetail}/>
