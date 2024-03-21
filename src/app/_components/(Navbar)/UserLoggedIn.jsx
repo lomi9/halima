@@ -1,9 +1,11 @@
-import { SignOutButton } from '@clerk/nextjs'
+import { SignOutButton, useUser } from '@clerk/nextjs'
 import { BookmarkCheck, CircleUserRound, ConciergeBell, SquareUser, X } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
 
 function UserLoggedIn({ onSignOut, onClose }) {
+
+    const { user } = useUser();
 
     const handleSignOut = () => {
         onSignOut();
@@ -16,6 +18,7 @@ function UserLoggedIn({ onSignOut, onClose }) {
             <X className='text-primary-color border-none bg-transparent'/> 
         </button>
         <div className='w-full kodchasan flex justify-center font-thin text-[20px] pt-[13px] '>Bienvenue!</div>
+        <p className='email chakra text-[15px] text-secondary-color'>{user?.primaryEmailAddress?.emailAddress}</p>
 
         <div className='w-full'>
         <ul  className="menu z-[1] px-0 py-12 m-0 bg-yellow-color rounded-box w-full">

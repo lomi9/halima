@@ -119,12 +119,12 @@ export default function Navbar() {
 
   return (
     <>
-    <header className='flex fixed w-full bg-transparent py-[2vw] z-50 max-h-[120px]'>
+    <header className='flex fixed w-full bg-transparent py-[2vw] z-50 max-h-[120px] 2xl:max-h-[320px] '>
 
   <div className="navbar bg-yellow-color top-3 p-0 w-full border-x-0 border-solid border border-secondary min-h-0 shadow-sm">
     <div className="navbar-start">
-      <div className="dropdown">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" onClick={toggleMenu}>
+      <div className="dropdown 2xl:pl-[1vw]">
+        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle " onClick={toggleMenu}>
 
 
               {isMenuOpen ? (
@@ -144,10 +144,10 @@ export default function Navbar() {
       </div>
 
     </div>
-    <div className="navbar-center flex-wrap content-center py-[0.5vw]">
+    <div className="navbar-center flex-wrap content-center py-[0.5vw] 2xl:py-[1vw]">
       <Link href="/" className="kodchasan flex  font-light btn btn-ghost text-[2.5vw] flex-wrap content-center">
         <p className='kodchasan font-light text-[2.5vw] hidden sm:flex '>HALIMA</p> 
-        <div className='w-[50px] h-[50px] overflow-hidden'>
+        <div className='w-[50px] 2xl:w-[70px] h-[50px] 2xl:h-[70px] overflow-hidden '>
         <Image src={logo.src} width={50} height={50}  alt="Logo Halima Garden" className='object-cover overflow-hidden w-full h-full object-center'/>
         </div>
         <p className='kodchasan font-light text-[2.5vw] hidden sm:flex '>GARDEN</p>

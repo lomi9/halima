@@ -26,7 +26,7 @@ function AllCategories() {
 
 
   return (
-    <div className="all__categories flex flex-wrap overflow-hidden mt-7 pb-28 bg-yellow-main-color">
+    <div className="all__categories w-full flex flex-wrap overflow-hidden mt-7 pb-28 bg-yellow-main-color">
     <div className='w-full pt-24'>
       <div className='relative flex flex-wrap justify-center content-center w-auto mb-[15vw] sm:mb-[8vw] mt-[2vw]'>
       <h3 className='kodchasan font-light uppercase flex flex-wrap content-center justify-center text-secondary-color text-[6vw] sm:text-[2.5vw] md:text-[3.7vw] m-1.5'>

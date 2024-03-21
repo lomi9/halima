@@ -67,7 +67,7 @@ function ProductInfo({product}) {
   return (
     <div className='relative flex flex-wrap justify-center w-full'>
       <div className='bg-image relative w-full h-[200vw] sm:h-[97vw] md:h-[95vw] lg:h-[85vw] xl:h-[80vw]  overflow-hidden'>
-        <img src={PorteMaroc.src} className=' h-[1000px] sm:h-[800px] md:h-[900px] lg:h-[1100px] xl:h-[1300px] w-full object-cover rounded-bottom' alt="Porte Maroc"/>
+        <img src={PorteMaroc.src} className=' h-[1000px] sm:h-[97vw] md:h-[900px] lg:h-[1100px] xl:h-[1300px] w-full object-cover rounded-bottom' alt="Porte Maroc"/>
       </div>
       <div className='top-content absolute top-[7vw] left-0 sm:left-4 flex flex-wrap justify-center'>
         <div className='flex flex-wrap w-[100%] justify-center'>
